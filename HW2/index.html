@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homework HTML</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Smart Home Control Panel</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li>
+          <details>
+            <summary><a href="#livingroom">Living Room</a></summary>
+            <ul>
+              <li><a href="#livingroom-notifications">Notifications</a></li>
+            </ul>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><a href="#kitchen">Kitchen</a></summary>
+            <ul>
+              <li><a href="#kitchen-notifications">Notifications</a></li>
+            </ul>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><a href="#bedroom">Bedroom</a></summary>
+            <ul>
+              <li><a href="#bedroom-notifications">Notifications</a></li>
+            </ul>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary><a href="#garden">Garden</a></summary>
+            <ul>
+              <li><a href="#garden-notifications">Notifications</a></li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </nav>
+
+    <ul>
+      <li>
+        <h2 id="livingroom">Living Room</h2>
+        <table border="1">
+          <thead>
+            <tr>
+              <th rowspan="2">Status</th>
+              <th colspan="4">Sensor</th>
+            </tr>
+
+            <tr>
+              <th>
+                <img
+                  src="img/thermometer.png"
+                  alt="Temperature sensor"
+                  width="50px"
+                />
+                <p>Temperature sensor</p>
+              </th>
+              <th>
+                <img src="img/run.png" alt="Motion sensor (PIR)" width="50px" />
+                <p>Motion sensor (PIR)</p>
+              </th>
+              <th>
+                <img src="img/smoke.png" alt="Smoke sensor" width="50px" />
+                <p>Smoke sensor</p>
+              </th>
+              <th>
+                <img src="img/idea.png" alt="Light sensor" width="50px" />
+                <p>Light sensor</p>
+              </th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Data</td>
+              <td><meter value="22" min="-10" max="50"></meter></td>
+              <td><progress value="65" min="0" max="100"></progress></td>
+              <td>
+                <p>3 <sub>%/m</sub></p>
+              </td>
+              <td>
+                <p>233.2 <sup>lx</sup></p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Battery</td>
+              <td>30% <input type="color" value="orange" disabled /></td>
+              <td>73% <input type="color" value="green" disabled /></td>
+              <td>42% <input type="color" value="orange" disabled /></td>
+              <td>58% <input type="color" value="yellow" disabled /></td>
+            </tr>
+
+            <tr>
+              <td>On/Off</td>
+              <td><input type="checkbox" checked /></td>
+              <td><input type="checkbox" checked /></td>
+              <td><input type="checkbox" checked /></td>
+              <td><input type="checkbox" checked /></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <details>
+          <summary>Notifications</summary>
+          <ul id="livingroom-notifications">
+            <li>A lot of movement in the living room!</li>
+          </ul>
+        </details>
+      </li>
+
+      <li>
+        <h2 id="kitchen">Kitchen</h2>
+        <table border="1">
+          <thead>
+            <tr>
+              <th rowspan="2">Status</th>
+              <th colspan="4">Sensor</th>
+            </tr>
+
+            <tr>
+              <th>
+                <img
+                  src="img/thermometer.png"
+                  alt="Temperature sensor"
+                  width="50px"
+                />
+                <p>Temperature sensor</p>
+              </th>
+              <th>
+                <img src="img/run.png" alt="Motion sensor (PIR)" width="50px" />
+                <p>Motion sensor (PIR)</p>
+              </th>
+              <th>
+                <img src="img/smoke.png" alt="Smoke sensor" width="50px" />
+                <p>Smoke sensor</p>
+              </th>
+              <th>
+                <img src="img/idea.png" alt="Light sensor" width="50px" />
+                <p>Light sensor</p>
+              </th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Data</td>
+              <td><meter value="32" min="-10" max="50"></meter></td>
+              <td><progress value="0" min="0" max="100"></progress></td>
+              <td>
+                <p>23 <sub>%/m</sub></p>
+              </td>
+              <td>
+                <p>0 <sup>lx</sup></p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Battery</td>
+              <td>37% <input type="color" value="orange" disabled /></td>
+              <td>23% <input type="color" value="red" disabled /></td>
+              <td>82% <input type="color" value="green" disabled /></td>
+              <td>28% <input type="color" value="red" disabled /></td>
+            </tr>
+
+            <tr>
+              <td>On/Off</td>
+              <td><input type="checkbox" checked /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" checked /></td>
+              <td><input type="checkbox" /></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <details>
+          <summary>Notifications</summary>
+          <ul id="kitchen-notifications">
+            <li>Something delicious is cooking!</li>
+          </ul>
+        </details>
+      </li>
+
+      <li>
+        <h2 id="bedroom">Bedroom</h2>
+        <table border="1">
+          <thead>
+            <tr>
+              <th rowspan="2">Status</th>
+              <th colspan="4">Sensor</th>
+            </tr>
+
+            <tr>
+              <th>
+                <img
+                  src="img/thermometer.png"
+                  alt="Temperature sensor"
+                  width="50px"
+                />
+                <p>Temperature sensor</p>
+              </th>
+              <th>
+                <img src="img/run.png" alt="Motion sensor (PIR)" width="50px" />
+                <p>Motion sensor (PIR)</p>
+              </th>
+              <th>
+                <img src="img/smoke.png" alt="Smoke sensor" width="50px" />
+                <p>Smoke sensor</p>
+              </th>
+              <th>
+                <img src="img/idea.png" alt="Light sensor" width="50px" />
+                <p>Light sensor</p>
+              </th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Data</td>
+              <td><meter value="30" min="-10" max="50"></meter></td>
+              <td><progress value="10" min="0" max="100"></progress></td>
+              <td>
+                <p>0 <sub>%/m</sub></p>
+              </td>
+              <td>
+                <p>78 <sup>lx</sup></p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Battery</td>
+              <td>92% <input type="color" value="green" disabled /></td>
+              <td>78% <input type="color" value="green" disabled /></td>
+              <td>12% <input type="color" value="red" disabled /></td>
+              <td>38% <input type="color" value="orange" disabled /></td>
+            </tr>
+
+            <tr>
+              <td>On/Off</td>
+              <td><input type="checkbox" checked /></td>
+              <td><input type="checkbox" checked /></td>
+              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" checked /></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <details>
+          <summary>Notifications</summary>
+          <ul id="bedroom-notifications">
+            <li>Dimmed lights in the bedroom ready for sleep!</li>
+          </ul>
+        </details>
+      </li>
+
+      <li>
+        <h2 id="garden">Garden</h2>
+        <table border="1">
+          <thead>
+            <tr>
+              <th rowspan="2">Status</th>
+              <th colspan="4">Sensor</th>
+            </tr>
+
+            <tr>
+              <th>
+                <img
+                  src="img/thermometer.png"
+                  alt="Temperature sensor"
+                  width="50px"
+                />
+                <p>Temperature sensor</p>
+              </th>
+              <th>
+                <img src="img/run.png" alt="Motion sensor (PIR)" width="50px" />
+                <p>Motion sensor (PIR)</p>
+              </th>
+              <th>
+                <img src="img/smoke.png" alt="Smoke sensor" width="50px" />
+                <p>Smoke sensor</p>
+              </th>
+              <th>
+                <img src="img/idea.png" alt="Light sensor" width="50px" />
+                <p>Light sensor</p>
+              </th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Data</td>
+              <td><meter value="10" min="-10" max="50"></meter></td>
+              <td><progress value="20" min="0" max="100"></progress></td>
+              <td>
+                <p>15 <sub>%/m</sub></p>
+              </td>
+              <td>
+                <p>0 <sup>lx</sup></p>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Battery</td>
+              <td>17% <input type="color" value="red" disabled /></td>
+              <td>8% <input type="color" value="red" disabled /></td>
+              <td>10% <input type="color" value="red" disabled /></td>
+              <td>88% <input type="color" value="green" disabled /></td>
+            </tr>
+
+            <tr>
+              <td>On/Off</td>
+              <td><input type="checkbox" checked /></td>
+              <td><input type="checkbox" checked /></td>
+              <td><input type="checkbox" checked /></td>
+              <td><input type="checkbox" /></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <details>
+          <summary>Notifications</summary>
+          <ul id="garden-notifications">
+            <li>Low levels of smoke detected!</li>
+            <li>Where is the smoke coming from?</li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+
+    <br />
+  </body>
+</html>
