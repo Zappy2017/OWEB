@@ -306,7 +306,7 @@ nav {
   background: rgba(255, 255, 255, 0.15);
 
   /* The blur effect on the content behind the card */
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(100px);
   -webkit-backdrop-filter: blur(12px); /* Safari support */
 
   /* Subtle glass edge border */
@@ -334,7 +334,7 @@ nav {
   background: rgba(255, 255, 255, 0.15);
 
   /* The blur effect on the content behind the card */
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(100px);
   -webkit-backdrop-filter: blur(12px); /* Safari support */
 
   /* Subtle glass edge border */
