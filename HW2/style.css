@@ -156,6 +156,7 @@ nav {
 }
 
 .stats h2 {
+  scroll-margin: 110px;
   padding-bottom: 10px;
   border-bottom: 1px whitesmoke solid;
   color: whitesmoke;
