@@ -13,213 +13,13 @@
     sans-serif;
 }
 
-@keyframes move {
-  100% {
-    transform: translate3d(0, 0, 1px) rotate(360deg);
-  }
-}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 
-.background {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  background: #3e1e68;
-  overflow: hidden;
-}
-
-.background span {
-  width: 20vmin;
-  height: 20vmin;
-  border-radius: 20vmin;
-  backface-visibility: hidden;
-  position: absolute;
-  animation: move;
-  animation-duration: 45;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-.background span:nth-child(0) {
-  color: #e45a84;
-  top: 68%;
-  left: 91%;
-  animation-duration: 20s;
-  animation-delay: -27s;
-  transform-origin: 16vw -16vh;
-  box-shadow: -40vmin 0 5.170427432280295vmin currentColor;
-}
-.background span:nth-child(1) {
-  color: #e45a84;
-  top: 42%;
-  left: 3%;
-  animation-duration: 30s;
-  animation-delay: -9s;
-  transform-origin: 6vw 19vh;
-  box-shadow: -40vmin 0 5.499846030489454vmin currentColor;
-}
-.background span:nth-child(2) {
-  color: #583c87;
-  top: 37%;
-  left: 23%;
-  animation-duration: 44s;
-  animation-delay: -33s;
-  transform-origin: -21vw 24vh;
-  box-shadow: -40vmin 0 5.488366260560922vmin currentColor;
-}
-.background span:nth-child(3) {
-  color: #583c87;
-  top: 71%;
-  left: 13%;
-  animation-duration: 36s;
-  animation-delay: -18s;
-  transform-origin: 24vw 9vh;
-  box-shadow: -40vmin 0 5.485542292217032vmin currentColor;
-}
-.background span:nth-child(4) {
-  color: #e45a84;
-  top: 38%;
-  left: 72%;
-  animation-duration: 40s;
-  animation-delay: -33s;
-  transform-origin: -16vw 8vh;
-  box-shadow: 40vmin 0 5.460361488215445vmin currentColor;
-}
-.background span:nth-child(5) {
-  color: #583c87;
-  top: 89%;
-  left: 62%;
-  animation-duration: 38s;
-  animation-delay: -11s;
-  transform-origin: -1vw -1vh;
-  box-shadow: 40vmin 0 5.895296290108066vmin currentColor;
-}
-.background span:nth-child(6) {
-  color: #e45a84;
-  top: 91%;
-  left: 20%;
-  animation-duration: 17s;
-  animation-delay: -25s;
-  transform-origin: -1vw -23vh;
-  box-shadow: 40vmin 0 5.945797172189447vmin currentColor;
-}
-.background span:nth-child(7) {
-  color: #583c87;
-  top: 72%;
-  left: 29%;
-  animation-duration: 25s;
-  animation-delay: -23s;
-  transform-origin: 22vw 24vh;
-  box-shadow: 40vmin 0 5.094710441394981vmin currentColor;
-}
-.background span:nth-child(8) {
-  color: #583c87;
-  top: 6%;
-  left: 47%;
-  animation-duration: 6s;
-  animation-delay: -22s;
-  transform-origin: -9vw -8vh;
-  box-shadow: 40vmin 0 5.523208982259014vmin currentColor;
-}
-.background span:nth-child(9) {
-  color: #e45a84;
-  top: 46%;
-  left: 40%;
-  animation-duration: 8s;
-  animation-delay: -49s;
-  transform-origin: 1vw -21vh;
-  box-shadow: -40vmin 0 5.6127700234040265vmin currentColor;
-}
-.background span:nth-child(10) {
-  color: #e45a84;
-  top: 93%;
-  left: 15%;
-  animation-duration: 44s;
-  animation-delay: -47s;
-  transform-origin: 17vw 0vh;
-  box-shadow: 40vmin 0 5.783161807678793vmin currentColor;
-}
-.background span:nth-child(11) {
-  color: #583c87;
-  top: 28%;
-  left: 93%;
-  animation-duration: 44s;
-  animation-delay: -18s;
-  transform-origin: -10vw 0vh;
-  box-shadow: -40vmin 0 5.084560460194747vmin currentColor;
-}
-.background span:nth-child(12) {
-  color: #e45a84;
-  top: 27%;
-  left: 53%;
-  animation-duration: 49s;
-  animation-delay: -44s;
-  transform-origin: 24vw 20vh;
-  box-shadow: -40vmin 0 5.598503588397546vmin currentColor;
-}
-.background span:nth-child(13) {
-  color: #ffacac;
-  top: 84%;
-  left: 99%;
-  animation-duration: 22s;
-  animation-delay: -15s;
-  transform-origin: 23vw 2vh;
-  box-shadow: 40vmin 0 5.902370224891143vmin currentColor;
-}
-.background span:nth-child(14) {
-  color: #e45a84;
-  top: 43%;
-  left: 13%;
-  animation-duration: 40s;
-  animation-delay: -12s;
-  transform-origin: 4vw -12vh;
-  box-shadow: -40vmin 0 5.206640645014831vmin currentColor;
-}
-.background span:nth-child(15) {
-  color: #e45a84;
-  top: 70%;
-  left: 88%;
-  animation-duration: 53s;
-  animation-delay: -12s;
-  transform-origin: 21vw 25vh;
-  box-shadow: -40vmin 0 5.702470812058634vmin currentColor;
-}
-.background span:nth-child(16) {
-  color: #583c87;
-  top: 70%;
-  left: 56%;
-  animation-duration: 11s;
-  animation-delay: -10s;
-  transform-origin: -24vw -3vh;
-  box-shadow: 40vmin 0 5.103251064327769vmin currentColor;
-}
-.background span:nth-child(17) {
-  color: #583c87;
-  top: 25%;
-  left: 18%;
-  animation-duration: 44s;
-  animation-delay: -17s;
-  transform-origin: -4vw -3vh;
-  box-shadow: 40vmin 0 5.232853842468633vmin currentColor;
-}
-.background span:nth-child(18) {
-  color: #e45a84;
-  top: 64%;
-  left: 30%;
-  animation-duration: 27s;
-  animation-delay: -42s;
-  transform-origin: -11vw 24vh;
-  box-shadow: 40vmin 0 5.360891141735045vmin currentColor;
-}
-.background span:nth-child(19) {
-  color: #e45a84;
-  top: 68%;
-  left: 96%;
-  animation-duration: 11s;
-  animation-delay: -34s;
-  transform-origin: -17vw 18vh;
-  box-shadow: 40vmin 0 5.1623513577394995vmin currentColor;
+  background-color: #383838;
 }
 
 a {
@@ -306,7 +106,7 @@ nav {
   background: rgba(255, 255, 255, 0.15);
 
   /* The blur effect on the content behind the card */
-  backdrop-filter: blur(100px);
+  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px); /* Safari support */
 
   /* Subtle glass edge border */
@@ -319,13 +119,16 @@ nav {
 /* ================================ MAIN ================================ */
 
 .stats-container {
-  width: 90%;
-  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .stats {
+  width: 70%;
   padding: 30px;
-  width: 100%;
   border-radius: 25px;
 
   margin-top: 30px;
@@ -334,7 +137,7 @@ nav {
   background: rgba(255, 255, 255, 0.15);
 
   /* The blur effect on the content behind the card */
-  backdrop-filter: blur(100px);
+  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px); /* Safari support */
 
   /* Subtle glass edge border */
@@ -361,4 +164,59 @@ nav {
 .sensor-info {
   width: 25%;
   min-height: 150px;
+}
+
+/* ================ background shapes ================ */
+
+.shapes {
+  background-color: indianred;
+  position: fixed;
+}
+
+.shapes:nth-child(1) {
+  border-radius: 30% 70% 61% 39% / 32% 24% 76% 68%;
+  height: 300px;
+  width: 300px;
+  left: 10vw;
+  top: 10vh;
+}
+
+.shapes:nth-child(2) {
+  border-radius: 30% 70% 61% 39% / 32% 24% 76% 68%;
+  height: 500px;
+  width: 500px;
+  left: 75vw;
+  top: 40vh;
+}
+
+.shapes:nth-child(3) {
+  border-radius: 63% 37% 28% 72% / 54% 62% 38% 46%;
+  height: 250px;
+  width: 250px;
+  left: 75vw;
+  top: 0vh;
+}
+
+.shapes:nth-child(4) {
+  border-radius: 41% 59% 67% 33% / 38% 45% 55% 62%;
+  height: 700px;
+  width: 700px;
+  left: 0vw;
+  top: 60vh;
+}
+
+.shapes:nth-child(5) {
+  border-radius: 72% 28% 43% 57% / 61% 35% 65% 39%;
+  height: 180px;
+  width: 180px;
+  left: 60vw;
+  top: 10vh;
+}
+
+.shapes:nth-child(6) {
+  border-radius: 35% 65% 52% 48% / 45% 58% 42% 55%;
+  height: 150px;
+  width: 150px;
+  left: 30vw;
+  top: 45vh;
 }
