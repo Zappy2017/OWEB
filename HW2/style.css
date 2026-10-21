@@ -166,6 +166,93 @@ nav {
   min-height: 150px;
 }
 
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+/* ------------------- data, battery, status ------------------ */
+
+.data,
+.battery,
+.status {
+  padding: 10px;
+  margin-top: 8px;
+  border-radius: 8px;
+}
+
+/* Sensor readings */
+.data {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  min-height: 45px;
+}
+
+.data p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #222;
+}
+
+.data meter,
+.data progress {
+  width: 60%;
+  height: 12px;
+}
+
+/* Battery level */
+.battery {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.battery p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.battery input[type="color"] {
+  width: 22px;
+  height: 22px;
+  padding: 2px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  cursor: default;
+}
+
+/* Sensor on/off status */
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.status label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.status input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #16a34a;
+  cursor: pointer;
+}
+
 /* ================ background shapes ================ */
 
 .shapes {

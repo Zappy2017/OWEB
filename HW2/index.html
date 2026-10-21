@@ -38,155 +38,93 @@
     </header>
 
     <div class="stats-container">
+      <!-- Living Room -->
       <div class="stats">
         <h2 id="livingroom">Living Room</h2>
+
         <div class="sensor-info-container">
           <div class="sensor-info">
-            <h3>Temperature sensor</h3>
-            <div class="data"></div>
-            <div class="battery"></div>
-            <div class="status"></div>
+            <div class="title">
+              <img
+                src="img/thermometer.png"
+                alt="Temperature sensor"
+                style="height: 20px"
+              />
+              <h3>Temperature sensor</h3>
+            </div>
+            <div class="data">
+              <meter value="22" min="-10" max="50"></meter>
+              <p>22 °C</p>
+            </div>
+            <div class="battery">
+              <strong>Battery</strong>
+              <p>30% <input type="color" value="orange" disabled /></p>
+            </div>
+            <div class="status">
+              <label>On <input type="checkbox" checked /></label>
+            </div>
           </div>
+
           <div class="sensor-info">
-            <h3>Motion sensor (PIR)</h3>
+            <div class="title">
+              <img
+                src="img/run.png"
+                alt="Motion sensor (PIR)"
+                style="height: 20px"
+              />
+              <h3>Motion sensor (PIR)</h3>
+            </div>
+            <div class="data">
+              <progress value="65" min="0" max="100"></progress>
+              <p>65%</p>
+            </div>
+            <div class="battery">
+              <strong>Battery</strong>
+              <p>73% <input type="color" value="green" disabled /></p>
+            </div>
+            <div class="status">
+              <label>On <input type="checkbox" checked /></label>
+            </div>
           </div>
+
           <div class="sensor-info">
-            <h3>Smoke sensor</h3>
+            <div class="title">
+              <img
+                src="img/smoke.png"
+                alt="Smoke sensor"
+                style="height: 20px"
+              />
+              <h3>Smoke sensor</h3>
+            </div>
+            <div class="data">
+              <p>3 <sub>%/m</sub></p>
+            </div>
+            <div class="battery">
+              <strong>Battery</strong>
+              <p>42% <input type="color" value="orange" disabled /></p>
+            </div>
+            <div class="status">
+              <label>On <input type="checkbox" checked /></label>
+            </div>
           </div>
+
           <div class="sensor-info">
-            <h3>Light sensor</h3>
+            <div class="title">
+              <img src="img/idea.png" alt="Light sensor" style="height: 20px" />
+              <h3>Light sensor</h3>
+            </div>
+            <div class="data">
+              <p>233.2 <sup>lx</sup></p>
+            </div>
+            <div class="battery">
+              <strong>Battery</strong>
+              <p>58% <input type="color" value="yellow" disabled /></p>
+            </div>
+            <div class="status">
+              <label>On <input type="checkbox" checked /></label>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="stats">
-        <h2 id="livingroom">Living Room</h2>
-        <div class="sensor-info-container">
-          <div class="sensor-info">
-            <h3>Temperature sensor</h3>
-            <div class="data"></div>
-            <div class="battery"></div>
-            <div class="status"></div>
-          </div>
-          <div class="sensor-info">
-            <h3>Motion sensor (PIR)</h3>
-          </div>
-          <div class="sensor-info">
-            <h3>Smoke sensor</h3>
-          </div>
-          <div class="sensor-info">
-            <h3>Light sensor</h3>
-          </div>
-        </div>
-      </div>
-
-      <div class="stats">
-        <h2 id="livingroom">Living Room</h2>
-        <div class="sensor-info-container">
-          <div class="sensor-info">
-            <h3>Temperature sensor</h3>
-            <div class="data"></div>
-            <div class="battery"></div>
-            <div class="status"></div>
-          </div>
-          <div class="sensor-info">
-            <h3>Motion sensor (PIR)</h3>
-          </div>
-          <div class="sensor-info">
-            <h3>Smoke sensor</h3>
-          </div>
-          <div class="sensor-info">
-            <h3>Light sensor</h3>
-          </div>
-        </div>
-      </div>
-
-      <div class="stats">
-        <h2 id="livingroom">Living Room</h2>
-        <div class="sensor-info-container">
-          <div class="sensor-info">
-            <h3>Temperature sensor</h3>
-            <div class="data"></div>
-            <div class="battery"></div>
-            <div class="status"></div>
-          </div>
-          <div class="sensor-info">
-            <h3>Motion sensor (PIR)</h3>
-          </div>
-          <div class="sensor-info">
-            <h3>Smoke sensor</h3>
-          </div>
-          <div class="sensor-info">
-            <h3>Light sensor</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- <ul>
-      <li>
-        <h2 id="livingroom">Living Room</h2>
-        <table border="1">
-          <thead>
-            <tr>
-              <th rowspan="2">Status</th>
-              <th colspan="4">Sensor</th>
-            </tr>
-
-            <tr>
-              <th>
-                <img
-                  src="img/thermometer.png"
-                  alt="Temperature sensor"
-                  width="50px"
-                />
-                <p>Temperature sensor</p>
-              </th>
-              <th>
-                <img src="img/run.png" alt="Motion sensor (PIR)" width="50px" />
-                <p>Motion sensor (PIR)</p>
-              </th>
-              <th>
-                <img src="img/smoke.png" alt="Smoke sensor" width="50px" />
-                <p>Smoke sensor</p>
-              </th>
-              <th>
-                <img src="img/idea.png" alt="Light sensor" width="50px" />
-                <p>Light sensor</p>
-              </th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td>Data</td>
-              <td><meter value="22" min="-10" max="50"></meter></td>
-              <td><progress value="65" min="0" max="100"></progress></td>
-              <td>
-                <p>3 <sub>%/m</sub></p>
-              </td>
-              <td>
-                <p>233.2 <sup>lx</sup></p>
-              </td>
-            </tr>
-
-            <tr>
-              <td>Battery</td>
-              <td>30% <input type="color" value="orange" disabled /></td>
-              <td>73% <input type="color" value="green" disabled /></td>
-              <td>42% <input type="color" value="orange" disabled /></td>
-              <td>58% <input type="color" value="yellow" disabled /></td>
-            </tr>
-
-            <tr>
-              <td>On/Off</td>
-              <td><input type="checkbox" checked /></td>
-              <td><input type="checkbox" checked /></td>
-              <td><input type="checkbox" checked /></td>
-              <td><input type="checkbox" checked /></td>
-            </tr>
-          </tbody>
-        </table>
 
         <details>
           <summary>Notifications</summary>
@@ -194,71 +132,95 @@
             <li>A lot of movement in the living room!</li>
           </ul>
         </details>
-      </li>
+      </div>
 
-      <li>
+      <!-- Kitchen -->
+      <div class="stats">
         <h2 id="kitchen">Kitchen</h2>
-        <table border="1">
-          <thead>
-            <tr>
-              <th rowspan="2">Status</th>
-              <th colspan="4">Sensor</th>
-            </tr>
 
-            <tr>
-              <th>
-                <img
-                  src="img/thermometer.png"
-                  alt="Temperature sensor"
-                  width="50px"
-                />
-                <p>Temperature sensor</p>
-              </th>
-              <th>
-                <img src="img/run.png" alt="Motion sensor (PIR)" width="50px" />
-                <p>Motion sensor (PIR)</p>
-              </th>
-              <th>
-                <img src="img/smoke.png" alt="Smoke sensor" width="50px" />
-                <p>Smoke sensor</p>
-              </th>
-              <th>
-                <img src="img/idea.png" alt="Light sensor" width="50px" />
-                <p>Light sensor</p>
-              </th>
-            </tr>
-          </thead>
+        <div class="sensor-info-container">
+          <div class="sensor-info">
+            <div class="title">
+              <img
+                src="img/thermometer.png"
+                alt="Temperature sensor"
+                style="height: 20px"
+              />
+              <h3>Temperature sensor</h3>
+            </div>
+            <div class="data">
+              <meter value="32" min="-10" max="50"></meter>
+              <p>32 °C</p>
+            </div>
+            <div class="battery">
+              <strong>Battery</strong>
+              <p>37% <input type="color" value="orange" disabled /></p>
+            </div>
+            <div class="status">
+              <label>On <input type="checkbox" checked /></label>
+            </div>
+          </div>
 
-          <tbody>
-            <tr>
-              <td>Data</td>
-              <td><meter value="32" min="-10" max="50"></meter></td>
-              <td><progress value="0" min="0" max="100"></progress></td>
-              <td>
-                <p>23 <sub>%/m</sub></p>
-              </td>
-              <td>
-                <p>0 <sup>lx</sup></p>
-              </td>
-            </tr>
+          <div class="sensor-info">
+            <div class="title">
+              <img
+                src="img/run.png"
+                alt="Motion sensor (PIR)"
+                style="height: 20px"
+              />
+              <h3>Motion sensor (PIR)</h3>
+            </div>
+            <div class="data">
+              <progress value="0" min="0" max="100"></progress>
+              <p>0%</p>
+            </div>
+            <div class="battery">
+              <strong>Battery</strong>
+              <p>23% <input type="color" value="red" disabled /></p>
+            </div>
+            <div class="status">
+              <label>Off <input type="checkbox" /></label>
+            </div>
+          </div>
 
-            <tr>
-              <td>Battery</td>
-              <td>37% <input type="color" value="orange" disabled /></td>
-              <td>23% <input type="color" value="red" disabled /></td>
-              <td>82% <input type="color" value="green" disabled /></td>
-              <td>28% <input type="color" value="red" disabled /></td>
-            </tr>
+          <div class="sensor-info">
+            <div class="title">
+              <img
+                src="img/smoke.png"
+                alt="Smoke sensor"
+                style="height: 20px"
+              />
+              <h3>Smoke sensor</h3>
+            </div>
+            <div class="data">
+              <p>23 <sub>%/m</sub></p>
+            </div>
+            <div class="battery">
+              <strong>Battery</strong>
+              <p>82% <input type="color" value="green" disabled /></p>
+            </div>
+            <div class="status">
+              <label>On <input type="checkbox" checked /></label>
+            </div>
+          </div>
 
-            <tr>
-              <td>On/Off</td>
-              <td><input type="checkbox" checked /></td>
-              <td><input type="checkbox" /></td>
-              <td><input type="checkbox" checked /></td>
-              <td><input type="checkbox" /></td>
-            </tr>
-          </tbody>
-        </table>
+          <div class="sensor-info">
+            <div class="title">
+              <img src="img/idea.png" alt="Light sensor" style="height: 20px" />
+              <h3>Light sensor</h3>
+            </div>
+            <div class="data">
+              <p>0 <sup>lx</sup></p>
+            </div>
+            <div class="battery">
+              <strong>Battery</strong>
+              <p>28% <input type="color" value="red" disabled /></p>
+            </div>
+            <div class="status">
+              <label>Off <input type="checkbox" /></label>
+            </div>
+          </div>
+        </div>
 
         <details>
           <summary>Notifications</summary>
@@ -266,71 +228,95 @@
             <li>Something delicious is cooking!</li>
           </ul>
         </details>
-      </li>
+      </div>
 
-      <li>
+      <!-- Bedroom -->
+      <div class="stats">
         <h2 id="bedroom">Bedroom</h2>
-        <table border="1">
-          <thead>
-            <tr>
-              <th rowspan="2">Status</th>
-              <th colspan="4">Sensor</th>
-            </tr>
 
-            <tr>
-              <th>
-                <img
-                  src="img/thermometer.png"
-                  alt="Temperature sensor"
-                  width="50px"
-                />
-                <p>Temperature sensor</p>
-              </th>
-              <th>
-                <img src="img/run.png" alt="Motion sensor (PIR)" width="50px" />
-                <p>Motion sensor (PIR)</p>
-              </th>
-              <th>
-                <img src="img/smoke.png" alt="Smoke sensor" width="50px" />
-                <p>Smoke sensor</p>
-              </th>
-              <th>
-                <img src="img/idea.png" alt="Light sensor" width="50px" />
-                <p>Light sensor</p>
-              </th>
-            </tr>
-          </thead>
+        <div class="sensor-info-container">
+          <div class="sensor-info">
+            <div class="title">
+              <img
+                src="img/thermometer.png"
+                alt="Temperature sensor"
+                style="height: 20px"
+              />
+              <h3>Temperature sensor</h3>
+            </div>
+            <div class="data">
+              <meter value="30" min="-10" max="50"></meter>
+              <p>30 °C</p>
+            </div>
+            <div class="battery">
+              <strong>Battery</strong>
+              <p>92% <input type="color" value="green" disabled /></p>
+            </div>
+            <div class="status">
+              <label>On <input type="checkbox" checked /></label>
+            </div>
+          </div>
 
-          <tbody>
-            <tr>
-              <td>Data</td>
-              <td><meter value="30" min="-10" max="50"></meter></td>
-              <td><progress value="10" min="0" max="100"></progress></td>
-              <td>
-                <p>0 <sub>%/m</sub></p>
-              </td>
-              <td>
-                <p>78 <sup>lx</sup></p>
-              </td>
-            </tr>
+          <div class="sensor-info">
+            <div class="title">
+              <img
+                src="img/run.png"
+                alt="Motion sensor (PIR)"
+                style="height: 20px"
+              />
+              <h3>Motion sensor (PIR)</h3>
+            </div>
+            <div class="data">
+              <progress value="10" min="0" max="100"></progress>
+              <p>10%</p>
+            </div>
+            <div class="battery">
+              <strong>Battery</strong>
+              <p>78% <input type="color" value="green" disabled /></p>
+            </div>
+            <div class="status">
+              <label>On <input type="checkbox" checked /></label>
+            </div>
+          </div>
 
-            <tr>
-              <td>Battery</td>
-              <td>92% <input type="color" value="green" disabled /></td>
-              <td>78% <input type="color" value="green" disabled /></td>
-              <td>12% <input type="color" value="red" disabled /></td>
-              <td>38% <input type="color" value="orange" disabled /></td>
-            </tr>
+          <div class="sensor-info">
+            <div class="title">
+              <img
+                src="img/smoke.png"
+                alt="Smoke sensor"
+                style="height: 20px"
+              />
+              <h3>Smoke sensor</h3>
+            </div>
+            <div class="data">
+              <p>0 <sub>%/m</sub></p>
+            </div>
+            <div class="battery">
+              <strong>Battery</strong>
+              <p>12% <input type="color" value="red" disabled /></p>
+            </div>
+            <div class="status">
+              <label>Off <input type="checkbox" /></label>
+            </div>
+          </div>
 
-            <tr>
-              <td>On/Off</td>
-              <td><input type="checkbox" checked /></td>
-              <td><input type="checkbox" checked /></td>
-              <td><input type="checkbox" /></td>
-              <td><input type="checkbox" checked /></td>
-            </tr>
-          </tbody>
-        </table>
+          <div class="sensor-info">
+            <div class="title">
+              <img src="img/idea.png" alt="Light sensor" style="height: 20px" />
+              <h3>Light sensor</h3>
+            </div>
+            <div class="data">
+              <p>78 <sup>lx</sup></p>
+            </div>
+            <div class="battery">
+              <strong>Battery</strong>
+              <p>38% <input type="color" value="orange" disabled /></p>
+            </div>
+            <div class="status">
+              <label>On <input type="checkbox" checked /></label>
+            </div>
+          </div>
+        </div>
 
         <details>
           <summary>Notifications</summary>
@@ -338,71 +324,95 @@
             <li>Dimmed lights in the bedroom ready for sleep!</li>
           </ul>
         </details>
-      </li>
+      </div>
 
-      <li>
+      <!-- Garden -->
+      <div class="stats">
         <h2 id="garden">Garden</h2>
-        <table border="1">
-          <thead>
-            <tr>
-              <th rowspan="2">Status</th>
-              <th colspan="4">Sensor</th>
-            </tr>
 
-            <tr>
-              <th>
-                <img
-                  src="img/thermometer.png"
-                  alt="Temperature sensor"
-                  width="50px"
-                />
-                <p>Temperature sensor</p>
-              </th>
-              <th>
-                <img src="img/run.png" alt="Motion sensor (PIR)" width="50px" />
-                <p>Motion sensor (PIR)</p>
-              </th>
-              <th>
-                <img src="img/smoke.png" alt="Smoke sensor" width="50px" />
-                <p>Smoke sensor</p>
-              </th>
-              <th>
-                <img src="img/idea.png" alt="Light sensor" width="50px" />
-                <p>Light sensor</p>
-              </th>
-            </tr>
-          </thead>
+        <div class="sensor-info-container">
+          <div class="sensor-info">
+            <div class="title">
+              <img
+                src="img/thermometer.png"
+                alt="Temperature sensor"
+                style="height: 20px"
+              />
+              <h3>Temperature sensor</h3>
+            </div>
+            <div class="data">
+              <meter value="10" min="-10" max="50"></meter>
+              <p>10 °C</p>
+            </div>
+            <div class="battery">
+              <strong>Battery</strong>
+              <p>17% <input type="color" value="red" disabled /></p>
+            </div>
+            <div class="status">
+              <label>On <input type="checkbox" checked /></label>
+            </div>
+          </div>
 
-          <tbody>
-            <tr>
-              <td>Data</td>
-              <td><meter value="10" min="-10" max="50"></meter></td>
-              <td><progress value="20" min="0" max="100"></progress></td>
-              <td>
-                <p>15 <sub>%/m</sub></p>
-              </td>
-              <td>
-                <p>0 <sup>lx</sup></p>
-              </td>
-            </tr>
+          <div class="sensor-info">
+            <div class="title">
+              <img
+                src="img/run.png"
+                alt="Motion sensor (PIR)"
+                style="height: 20px"
+              />
+              <h3>Motion sensor (PIR)</h3>
+            </div>
+            <div class="data">
+              <progress value="20" min="0" max="100"></progress>
+              <p>20%</p>
+            </div>
+            <div class="battery">
+              <strong>Battery</strong>
+              <p>8% <input type="color" value="red" disabled /></p>
+            </div>
+            <div class="status">
+              <label>On <input type="checkbox" checked /></label>
+            </div>
+          </div>
 
-            <tr>
-              <td>Battery</td>
-              <td>17% <input type="color" value="red" disabled /></td>
-              <td>8% <input type="color" value="red" disabled /></td>
-              <td>10% <input type="color" value="red" disabled /></td>
-              <td>88% <input type="color" value="green" disabled /></td>
-            </tr>
+          <div class="sensor-info">
+            <div class="title">
+              <img
+                src="img/smoke.png"
+                alt="Smoke sensor"
+                style="height: 20px"
+              />
+              <h3>Smoke sensor</h3>
+            </div>
+            <div class="data">
+              <p>15 <sub>%/m</sub></p>
+            </div>
+            <div class="battery">
+              <strong>Battery</strong>
+              <p>10% <input type="color" value="red" disabled /></p>
+            </div>
+            <div class="status">
+              <label>On <input type="checkbox" checked /></label>
+            </div>
+          </div>
 
-            <tr>
-              <td>On/Off</td>
-              <td><input type="checkbox" checked /></td>
-              <td><input type="checkbox" checked /></td>
-              <td><input type="checkbox" checked /></td>
-              <td><input type="checkbox" /></td>
-            </tr>
-          </tbody>
-        </table>
+          <div class="sensor-info">
+            <div class="title">
+              <img src="img/idea.png" alt="Light sensor" style="height: 20px" />
+              <h3>Light sensor</h3>
+            </div>
+            <div class="data">
+              <p>0 <sup>lx</sup></p>
+            </div>
+            <div class="battery">
+              <strong>Battery</strong>
+              <p>88% <input type="color" value="green" disabled /></p>
+            </div>
+            <div class="status">
+              <label>Off <input type="checkbox" /></label>
+            </div>
+          </div>
+        </div>
 
         <details>
           <summary>Notifications</summary>
@@ -411,8 +421,8 @@
             <li>Where is the smoke coming from?</li>
           </ul>
         </details>
-      </li>
-    </ul> -->
+      </div>
+    </div>
 
     <br />
   </body>
