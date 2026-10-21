@@ -85,7 +85,7 @@ header li:hover {
   box-shadow:
     inset 0 1px 0 0 rgba(255, 255, 255, 0.4),
     inset 0 10px 20px -10px rgba(255, 255, 255, 0.2);
-  background-color: mediumslateblue;
+  background-color: crimson;
 }
 
 nav {
@@ -285,6 +285,135 @@ nav {
   width: 18px;
   height: 18px;
   margin: 0;
-  accent-color: #22c55e;
+  accent-color: crimson;
   cursor: pointer;
+}
+
+meter,
+progress {
+  width: 160px;
+  height: 12px;
+  vertical-align: middle;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+/* Progress bar background */
+progress {
+  background-color: #eeeeee;
+}
+
+/* Progress bar fill */
+progress::-webkit-progress-bar {
+  background-color: #eeeeee;
+  border-radius: 10px;
+}
+
+progress::-webkit-progress-value {
+  background-color: #c73659;
+  border-radius: 10px;
+}
+
+progress::-moz-progress-bar {
+  background-color: #c73659;
+  border-radius: 10px;
+}
+
+/* Meter background */
+meter {
+  background-color: #eeeeee;
+}
+
+/* Meter track */
+meter::-webkit-meter-bar {
+  background: #eeeeee;
+  border: none;
+  border-radius: 10px;
+}
+
+/* Meter fill */
+meter::-webkit-meter-optimum-value {
+  background: #a91d3a;
+  border-radius: 10px;
+}
+
+meter::-webkit-meter-suboptimum-value {
+  background: #c73659;
+  border-radius: 10px;
+}
+
+meter::-webkit-meter-even-less-good-value {
+  background: #a91d3a;
+  border-radius: 10px;
+}
+
+/* ================ notifications ================ */
+
+details {
+  margin: 15px 0;
+  overflow: hidden;
+  max-width: 400px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+summary {
+  padding: 12px 16px;
+  /* background-color: #a91d3a; */
+  color: #eeeeee;
+  font-weight: bold;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Hide default arrow */
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Custom arrow */
+summary::after {
+  content: "+";
+  font-size: 20px;
+  line-height: 1;
+}
+
+details[open] summary::after {
+  content: "−";
+}
+
+/* Hover effect */
+summary:hover {
+  background-color: #c73659;
+}
+
+/* Notification list */
+details ul {
+  list-style: none;
+  padding: 10px 16px;
+  margin: 0;
+}
+
+/* Individual notification */
+details ul li {
+  padding: 10px 12px;
+  margin: 5px 0;
+  border-left: 2px solid #c73659;
+  color: whitesmoke;
+  font-size: 14px;
+}
+
+/* Keyboard accessibility */
+summary:focus-visible {
+  outline: 2px solid #c73659;
+  outline-offset: -3px;
 }
