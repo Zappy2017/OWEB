@@ -36,19 +36,12 @@ li {
   text-decoration: none;
 }
 
-h1 {
-  padding: 0;
-  margin: 0;
-}
-
-h2 {
-  padding: 0;
-  margin: 0;
-}
-
+h1,
+h2,
 h3 {
   padding: 0;
   margin: 0;
+  color: whitesmoke;
 }
 
 header {
@@ -106,8 +99,8 @@ nav {
   background: rgba(255, 255, 255, 0.15);
 
   /* The blur effect on the content behind the card */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px); /* Safari support */
+  backdrop-filter: blur(64px);
+  -webkit-backdrop-filter: blur(64px); /* Safari support */
 
   /* Subtle glass edge border */
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -137,8 +130,8 @@ nav {
   background: rgba(255, 255, 255, 0.15);
 
   /* The blur effect on the content behind the card */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px); /* Safari support */
+  backdrop-filter: blur(64px);
+  -webkit-backdrop-filter: blur(64px); /* Safari support */
 
   /* Subtle glass edge border */
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -159,6 +152,7 @@ nav {
   justify-content: center;
 
   margin-top: 10px;
+  gap: 5px;
 }
 
 .sensor-info {
@@ -187,28 +181,51 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
   gap: 8px;
-  min-height: 45px;
+  min-height: 65px;
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .data p {
   margin: 0;
-  font-size: 18px;
-  font-weight: bold;
-  color: #222;
+  color: #f5f5f5;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.data sub,
+.data sup {
+  color: #bcbcbc;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 .data meter,
 .data progress {
-  width: 60%;
-  height: 12px;
+  width: 100%;
+  max-width: 220px;
+  height: 8px;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-/* Battery level */
+/* Battery information */
 .battery {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .battery p {
@@ -216,40 +233,50 @@ nav {
   align-items: center;
   gap: 8px;
   margin: 0;
+  color: #e5e7eb;
   font-size: 14px;
   font-weight: 600;
 }
 
+.battery strong {
+  color: whitesmoke;
+}
+
 .battery input[type="color"] {
-  width: 22px;
-  height: 22px;
-  padding: 2px;
+  width: 12px;
+  height: 12px;
+  padding: 0;
   border: none;
   border-radius: 50%;
   background: transparent;
   cursor: default;
 }
 
-/* Sensor on/off status */
+/* On/off status */
 .status {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .status label {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  color: #e5e7eb;
   font-size: 14px;
-  font-weight: 600;
-  color: #333;
+  font-weight: 500;
 }
 
 .status input[type="checkbox"] {
   width: 18px;
   height: 18px;
-  accent-color: #16a34a;
+  margin: 0;
+  accent-color: #22c55e;
   cursor: pointer;
 }
 
