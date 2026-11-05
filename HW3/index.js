@@ -145,6 +145,9 @@ let resetBtn = document.getElementById("resetBtn");
 startBtn.addEventListener("click", () => {
   mockData = structuredClone(mockDataOriginal);
 
+  let lapCount = document.getElementById("lapCurrent");
+  lapCount.innerText = 0;
+
   startBtn.disabled = true;
   resetBtn.disabled = false;
   race();
@@ -160,6 +163,9 @@ let popupResetBtn = document.getElementById("closeBtn");
 popupStartBtn.addEventListener("click", () => {
   startBtn.disabled = true;
   resetBtn.disabled = false;
+
+  let lapCount = document.getElementById("lapCurrent");
+  lapCount.innerText = 0;
 
   let popup = document.getElementById("winnerModal");
   popup.classList.remove("open");
