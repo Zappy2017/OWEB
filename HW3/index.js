@@ -117,18 +117,57 @@ let mockData = {
   },
 };
 
-document.addEventListener("DOMContentLoaded", race);
+let startBtn = document.getElementById("startBtn");
+startBtn.addEventListener("click", () => {
+  console.log("Started!");
+  race();
+});
 
 function race() {
+  let intervalLapTime = 5000;
+
   initDrivers();
 
-  updateDriversData();
-  console.log(mockData);
+  // Update Progress Bar
+  let intervalStart = Date.now();
+  let fill = document.getElementById("progressFill");
+  let progressBar = setInterval(() => {
+    let elapsed = Date.now() - intervalStart;
+    let progress = (elapsed / intervalLapTime) * 100;
 
-  // let loop = setInterval(() => {
-  //   getDriversData();
-  //   console.log(mockData);
-  // }, 20000);
+    fill.style.width = `${progress}%`;
+
+    if (progress == 100) {
+      progress = 0;
+    }
+
+    if (lap > 10) {
+      clearInterval(progressBar);
+      fill.style.width = `0%`;
+    }
+  }, 100);
+
+  let lap = 1;
+  let loop = setInterval(() => {
+    intervalStart = Date.now();
+
+    updateDriversData();
+    render();
+
+    // Update Lap Count
+    let lapCount = document.getElementById("lapCurrent");
+    lapCount.innerText = lap;
+    lap++;
+
+    if (lap > mockData.race.totalLaps) {
+      clearInterval(loop);
+
+      let winner = document.querySelector(
+        "#standingsBody tr:first-child .driver",
+      );
+      console.log("Winner: " + winner.textContent);
+    }
+  }, intervalLapTime);
 }
 
 // Initiates driver data for starting conditions for pit stops and incidents
@@ -193,5 +232,45 @@ function updateDriversData() {
       (Math.random() * 1.2 - 0.6);
 
     driver.lapTimes.push(lapTime);
+  });
+}
+
+function render() {
+  let drivers = mockData.race.drivers;
+
+  // Sort drivers by total lap time
+  drivers.sort((a, b) => {
+    let totalA = a.lapTimes.reduce((sum, lap) => sum + lap, 0);
+    let totalB = b.lapTimes.reduce((sum, lap) => sum + lap, 0);
+
+    return totalA - totalB;
+  });
+
+  const tbody = document.getElementById("standingsBody");
+  tbody.innerHTML = "";
+
+  drivers.forEach((driver, index) => {
+    let totalTime = 0;
+    driver.lapTimes.forEach((lap) => {
+      totalTime += lap;
+    });
+
+    tbody.insertAdjacentHTML(
+      "beforeend",
+      `
+        <tr>
+          <td class="col-pos">${index + 1}</td>
+          <td class="driver">${driver.name}</td>
+          <td>${driver.team}</td>
+          <td class="num">${driver.baseSpeed}</td>
+          <td class="num">${driver.baseSkill}</td>
+          <td><span class="tyre tyre-${driver.currentTireType.toLocaleLowerCase()}">${driver.currentTireType}</span></td>
+          <td class="num">0</td>
+          <td class="num">${driver.lapTimes[driver.lapTimes.length - 1].toFixed(2)}</td>
+          <td class="num">${totalTime.toFixed(2)}</td>
+          <td><span class="status status-ok">Grid</span></td>
+        </tr>
+      `,
+    );
   });
 }
