@@ -309,10 +309,36 @@ function updateDriversData() {
   });
 }
 
+let eventFlag = true;
+
 function render() {
   let drivers = mockData.race.drivers;
 
+  // Display Safety Car Banner
+  let safetyBanner = document.getElementById("safetyBanner");
+  let eventlog = document.getElementById("eventLog");
+  if (Math.random() < 0.05) {
+    safetyBanner.classList.add("visible");
+
+    if (eventFlag) {
+      eventlog.innerHTML = "";
+    }
+
+    const now = new Date();
+    eventlog.insertAdjacentHTML(
+      "beforeend",
+      `
+        <li> Safety Vehicle Appeared ${now.toLocaleString()} </li>
+      `,
+    );
+
+    eventFlag = false;
+  } else {
+    safetyBanner.classList.remove("visible");
+  }
+
   // Sort drivers by total lap time
+  // ! This snippnet for sorting drivers is AI i didn't know how to sort them by total time this clean
   drivers.sort((a, b) => {
     let totalA = a.lapTimes.reduce((sum, lap) => sum + lap, 0);
     let totalB = b.lapTimes.reduce((sum, lap) => sum + lap, 0);
