@@ -180,7 +180,7 @@ popupResetBtn.addEventListener("click", () => {
 });
 
 function race() {
-  let intervalLapTime = 5000;
+  let intervalLapTime = 300;
 
   initDrivers();
 
@@ -229,12 +229,21 @@ function race() {
       let winnerTeam = document.querySelector(
         "#standingsBody tr:first-child .team",
       ).innerText;
+      let winnerTime = document.querySelector(
+        "#standingsBody tr:first-child .totaltime",
+      ).innerText;
 
       let popupDriverName = document.getElementById("winnerTitle");
       popupDriverName.innerText = winner;
 
       let popupTeamName = document.getElementById("winnerTeam");
       popupTeamName.innerText = winnerTeam;
+
+      let popupTime = document.getElementById("winnerTime");
+      popupTime.textContent = winnerTime;
+
+      let popupPits = document.getElementById("winnerPits");
+      popupPits.textContent = 1;
 
       let popup = document.getElementById("winnerModal");
       popup.classList.add("open");
@@ -399,7 +408,7 @@ function render() {
           <td><span class="tyre tyre-${driver.currentTireType.toLocaleLowerCase()}">${driver.currentTireType.charAt(0).toUpperCase() + driver.currentTireType.slice(1)}</span></td>
           <td class="num">${driver.pits}</td>
           <td class="num">${driver.lapTimes[driver.lapTimes.length - 1].toFixed(2)}</td>
-          <td class="num">${totalTime.toFixed(2)}</td>
+          <td class="num totaltime">${totalTime.toFixed(2)}</td>
           <td><span class="status status-${driver.status.toLocaleLowerCase()}">${driver.status}</span></td>
         </tr>
       `,
