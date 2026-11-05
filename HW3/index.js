@@ -11,6 +11,7 @@ mockDataOriginal = {
         baseSkill: 98,
         currentTireType: "soft",
         pits: 0,
+        status: "OK",
         pitStops: [],
         incidents: [],
         lapTimes: [],
@@ -23,6 +24,7 @@ mockDataOriginal = {
         baseSkill: 97,
         currentTireType: "medium",
         pits: 0,
+        status: "OK",
         pitStops: [],
         incidents: [],
         lapTimes: [],
@@ -35,6 +37,7 @@ mockDataOriginal = {
         baseSkill: 94,
         currentTireType: "soft",
         pits: 0,
+        status: "OK",
         pitStops: [],
         incidents: [],
         lapTimes: [],
@@ -47,6 +50,7 @@ mockDataOriginal = {
         baseSkill: 95,
         currentTireType: "medium",
         pits: 0,
+        status: "OK",
         pitStops: [],
         incidents: [],
         lapTimes: [],
@@ -59,6 +63,7 @@ mockDataOriginal = {
         baseSkill: 94,
         currentTireType: "hard",
         pits: 0,
+        status: "OK",
         pitStops: [],
         incidents: [],
         lapTimes: [],
@@ -71,6 +76,7 @@ mockDataOriginal = {
         baseSkill: 96,
         currentTireType: "soft",
         pits: 0,
+        status: "OK",
         pitStops: [],
         incidents: [],
         lapTimes: [],
@@ -83,6 +89,7 @@ mockDataOriginal = {
         baseSkill: 93,
         currentTireType: "medium",
         pits: 0,
+        status: "OK",
         pitStops: [],
         incidents: [],
         lapTimes: [],
@@ -95,6 +102,7 @@ mockDataOriginal = {
         baseSkill: 98,
         currentTireType: "hard",
         pits: 0,
+        status: "OK",
         pitStops: [],
         incidents: [],
         lapTimes: [],
@@ -107,6 +115,7 @@ mockDataOriginal = {
         baseSkill: 85,
         currentTireType: "medium",
         pits: 0,
+        status: "OK",
         pitStops: [],
         incidents: [],
         lapTimes: [],
@@ -119,6 +128,7 @@ mockDataOriginal = {
         baseSkill: 91,
         currentTireType: "soft",
         pits: 0,
+        status: "OK",
         pitStops: [],
         incidents: [],
         lapTimes: [],
@@ -164,8 +174,7 @@ popupResetBtn.addEventListener("click", () => {
 });
 
 function race() {
-  // let intervalLapTime = 5000;
-  let intervalLapTime = 100;
+  let intervalLapTime = 5000;
 
   initDrivers();
 
@@ -302,9 +311,20 @@ function updateDriversData() {
           : (driver.currentTireType = "soft");
     }
 
+    // Update Incidents
+    if (currentLap === driver.incidents.lap) {
+      driver.status = "SPIN";
+    } else {
+      driver.status = "OK";
+    }
+
     // Update Pit Stops
     if (currentLap == driver.pitStops.lap) {
       driver.pits = 1;
+
+      driver.status = "PIT";
+    } else {
+      driver.status = "OK";
     }
   });
 }
@@ -368,7 +388,7 @@ function render() {
           <td class="num">${driver.pits}</td>
           <td class="num">${driver.lapTimes[driver.lapTimes.length - 1].toFixed(2)}</td>
           <td class="num">${totalTime.toFixed(2)}</td>
-          <td><span class="status status-ok">Grid</span></td>
+          <td><span class="status status-${driver.status.toLocaleLowerCase()}">${driver.status}</span></td>
         </tr>
       `,
     );
