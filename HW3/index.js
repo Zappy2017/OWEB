@@ -128,8 +128,34 @@ let mockData = {
 };
 
 let startBtn = document.getElementById("startBtn");
+let resetBtn = document.getElementById("resetBtn");
+
 startBtn.addEventListener("click", () => {
+  startBtn.disabled = true;
+  resetBtn.disabled = false;
   race();
+});
+
+resetBtn.addEventListener("click", () => {
+  window.location.reload();
+});
+
+let popupStartBtn = document.getElementById("raceAgainBtn");
+let popupResetBtn = document.getElementById("closeBtn");
+
+popupStartBtn.addEventListener("click", () => {
+  startBtn.disabled = true;
+  resetBtn.disabled = false;
+
+  let popup = document.getElementById("winnerModal");
+  popup.classList.remove("open");
+
+  race();
+});
+
+popupResetBtn.addEventListener("click", () => {
+  let popup = document.getElementById("winnerModal");
+  popup.classList.remove("open");
 });
 
 function race() {
@@ -171,9 +197,20 @@ function race() {
     if (lap > mockData.race.totalLaps) {
       clearInterval(loop);
 
+      // Reset Action Buttons
+      startBtn.disabled = false;
+      resetBtn.disabled = true;
+
+      // Show Winner Popup
       let winner = document.querySelector(
         "#standingsBody tr:first-child .driver",
-      );
+      ).innerText;
+
+      let popupDriverName = document.getElementById("winnerTitle");
+      popupDriverName.innerText = winner;
+
+      let popup = document.getElementById("winnerModal");
+      popup.classList.add("open");
     }
   }, intervalLapTime);
 }
