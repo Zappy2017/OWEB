@@ -12,6 +12,7 @@ let mockData = {
         currentTireType: "soft",
         pitStops: [],
         incidents: [],
+        lapTimes: [],
       },
       {
         id: 2,
@@ -22,6 +23,7 @@ let mockData = {
         currentTireType: "medium",
         pitStops: [],
         incidents: [],
+        lapTimes: [],
       },
       {
         id: 3,
@@ -32,6 +34,7 @@ let mockData = {
         currentTireType: "soft",
         pitStops: [],
         incidents: [],
+        lapTimes: [],
       },
       {
         id: 4,
@@ -42,6 +45,7 @@ let mockData = {
         currentTireType: "medium",
         pitStops: [],
         incidents: [],
+        lapTimes: [],
       },
       {
         id: 5,
@@ -52,6 +56,7 @@ let mockData = {
         currentTireType: "hard",
         pitStops: [],
         incidents: [],
+        lapTimes: [],
       },
       {
         id: 6,
@@ -62,6 +67,7 @@ let mockData = {
         currentTireType: "soft",
         pitStops: [],
         incidents: [],
+        lapTimes: [],
       },
       {
         id: 7,
@@ -72,6 +78,7 @@ let mockData = {
         currentTireType: "medium",
         pitStops: [],
         incidents: [],
+        lapTimes: [],
       },
       {
         id: 8,
@@ -82,6 +89,7 @@ let mockData = {
         currentTireType: "hard",
         pitStops: [],
         incidents: [],
+        lapTimes: [],
       },
       {
         id: 9,
@@ -92,6 +100,7 @@ let mockData = {
         currentTireType: "medium",
         pitStops: [],
         incidents: [],
+        lapTimes: [],
       },
       {
         id: 10,
@@ -102,6 +111,7 @@ let mockData = {
         currentTireType: "soft",
         pitStops: [],
         incidents: [],
+        lapTimes: [],
       },
     ],
   },
@@ -112,7 +122,13 @@ document.addEventListener("DOMContentLoaded", race);
 function race() {
   initDrivers();
 
+  updateDriversData();
   console.log(mockData);
+
+  // let loop = setInterval(() => {
+  //   getDriversData();
+  //   console.log(mockData);
+  // }, 20000);
 }
 
 // Initiates driver data for starting conditions for pit stops and incidents
@@ -157,9 +173,25 @@ function initDrivers() {
   });
 }
 
-// Calculates effective speed for each driver taking into account their stats and random ranges
-function getDriversData() {
-  let drivers = mockData.drivers;
+// Calculates lap time for each driver taking into account their stats and random ranges
+function updateDriversData() {
+  // Check if race has ended
+  if (mockData.race.totalLaps < mockData.race.drivers[0].lapTimes.length) {
+    return;
+  }
 
-  drivers.forEach((driver) => {});
+  let drivers = mockData.race.drivers;
+
+  drivers.forEach((driver) => {
+    let baseLapTime = 90;
+
+    let lapTime =
+      baseLapTime -
+      driver.baseSpeed * 0.08 -
+      driver.baseSkill * 0.03 +
+      (driver.currentTireType === "soft" ? -0.8 : 0.4) +
+      (Math.random() * 1.2 - 0.6);
+
+    driver.lapTimes.push(lapTime);
+  });
 }
