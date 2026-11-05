@@ -1,5 +1,5 @@
 // The mock data is here to provide general data structure parameters like pit stops and incidents will be calculated randomly
-let mockData = {
+mockDataOriginal = {
   race: {
     totalLaps: 10,
     drivers: [
@@ -127,10 +127,14 @@ let mockData = {
   },
 };
 
+let mockData = structuredClone(mockDataOriginal); // This is suggested by AI this should make a "deep clone" just so i can make a fresh race every run
+
 let startBtn = document.getElementById("startBtn");
 let resetBtn = document.getElementById("resetBtn");
 
 startBtn.addEventListener("click", () => {
+  mockData = structuredClone(mockDataOriginal);
+
   startBtn.disabled = true;
   resetBtn.disabled = false;
   race();
@@ -150,6 +154,7 @@ popupStartBtn.addEventListener("click", () => {
   let popup = document.getElementById("winnerModal");
   popup.classList.remove("open");
 
+  mockData = structuredClone(mockDataOriginal);
   race();
 });
 
@@ -159,7 +164,8 @@ popupResetBtn.addEventListener("click", () => {
 });
 
 function race() {
-  let intervalLapTime = 5000;
+  // let intervalLapTime = 5000;
+  let intervalLapTime = 100;
 
   initDrivers();
 
@@ -205,9 +211,15 @@ function race() {
       let winner = document.querySelector(
         "#standingsBody tr:first-child .driver",
       ).innerText;
+      let winnerTeam = document.querySelector(
+        "#standingsBody tr:first-child .team",
+      ).innerText;
 
       let popupDriverName = document.getElementById("winnerTitle");
       popupDriverName.innerText = winner;
+
+      let popupTeamName = document.getElementById("winnerTeam");
+      popupTeamName.innerText = winnerTeam;
 
       let popup = document.getElementById("winnerModal");
       popup.classList.add("open");
@@ -323,7 +335,7 @@ function render() {
         <tr>
           <td class="col-pos">${index + 1}</td>
           <td class="driver">${driver.name}</td>
-          <td>${driver.team}</td>
+          <td class="team">${driver.team}</td>
           <td class="num">${driver.baseSpeed}</td>
           <td class="num">${driver.baseSkill}</td>
           <td><span class="tyre tyre-${driver.currentTireType.toLocaleLowerCase()}">${driver.currentTireType.charAt(0).toUpperCase() + driver.currentTireType.slice(1)}</span></td>
