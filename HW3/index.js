@@ -10,6 +10,7 @@ let mockData = {
         baseSpeed: 95,
         baseSkill: 98,
         currentTireType: "soft",
+        pits: 0,
         pitStops: [],
         incidents: [],
         lapTimes: [],
@@ -21,6 +22,7 @@ let mockData = {
         baseSpeed: 93,
         baseSkill: 97,
         currentTireType: "medium",
+        pits: 0,
         pitStops: [],
         incidents: [],
         lapTimes: [],
@@ -32,6 +34,7 @@ let mockData = {
         baseSpeed: 96,
         baseSkill: 94,
         currentTireType: "soft",
+        pits: 0,
         pitStops: [],
         incidents: [],
         lapTimes: [],
@@ -43,6 +46,7 @@ let mockData = {
         baseSpeed: 94,
         baseSkill: 95,
         currentTireType: "medium",
+        pits: 0,
         pitStops: [],
         incidents: [],
         lapTimes: [],
@@ -54,6 +58,7 @@ let mockData = {
         baseSpeed: 94,
         baseSkill: 94,
         currentTireType: "hard",
+        pits: 0,
         pitStops: [],
         incidents: [],
         lapTimes: [],
@@ -65,6 +70,7 @@ let mockData = {
         baseSpeed: 93,
         baseSkill: 96,
         currentTireType: "soft",
+        pits: 0,
         pitStops: [],
         incidents: [],
         lapTimes: [],
@@ -76,6 +82,7 @@ let mockData = {
         baseSpeed: 91,
         baseSkill: 93,
         currentTireType: "medium",
+        pits: 0,
         pitStops: [],
         incidents: [],
         lapTimes: [],
@@ -87,6 +94,7 @@ let mockData = {
         baseSpeed: 90,
         baseSkill: 98,
         currentTireType: "hard",
+        pits: 0,
         pitStops: [],
         incidents: [],
         lapTimes: [],
@@ -98,6 +106,7 @@ let mockData = {
         baseSpeed: 88,
         baseSkill: 85,
         currentTireType: "medium",
+        pits: 0,
         pitStops: [],
         incidents: [],
         lapTimes: [],
@@ -109,6 +118,7 @@ let mockData = {
         baseSpeed: 89,
         baseSkill: 91,
         currentTireType: "soft",
+        pits: 0,
         pitStops: [],
         incidents: [],
         lapTimes: [],
@@ -119,7 +129,6 @@ let mockData = {
 
 let startBtn = document.getElementById("startBtn");
 startBtn.addEventListener("click", () => {
-  console.log("Started!");
   race();
 });
 
@@ -165,7 +174,6 @@ function race() {
       let winner = document.querySelector(
         "#standingsBody tr:first-child .driver",
       );
-      console.log("Winner: " + winner.textContent);
     }
   }, intervalLapTime);
 }
@@ -222,6 +230,7 @@ function updateDriversData() {
   let drivers = mockData.race.drivers;
 
   drivers.forEach((driver) => {
+    // Update Lap Times
     let baseLapTime = 90;
 
     let lapTime =
@@ -232,6 +241,22 @@ function updateDriversData() {
       (Math.random() * 1.2 - 0.6);
 
     driver.lapTimes.push(lapTime);
+
+    // Update Tire Changes
+    let currentLap = driver.lapTimes.length;
+
+    if (currentLap === driver.pitStops.lap) {
+      let type = driver.currentTireType;
+      driver.currentTireType =
+        type == "soft"
+          ? (driver.currentTireType = "hard")
+          : (driver.currentTireType = "soft");
+    }
+
+    // Update Pit Stops
+    if (currentLap == driver.pitStops.lap) {
+      driver.pits = 1;
+    }
   });
 }
 
@@ -264,8 +289,8 @@ function render() {
           <td>${driver.team}</td>
           <td class="num">${driver.baseSpeed}</td>
           <td class="num">${driver.baseSkill}</td>
-          <td><span class="tyre tyre-${driver.currentTireType.toLocaleLowerCase()}">${driver.currentTireType}</span></td>
-          <td class="num">0</td>
+          <td><span class="tyre tyre-${driver.currentTireType.toLocaleLowerCase()}">${driver.currentTireType.charAt(0).toUpperCase() + driver.currentTireType.slice(1)}</span></td>
+          <td class="num">${driver.pits}</td>
           <td class="num">${driver.lapTimes[driver.lapTimes.length - 1].toFixed(2)}</td>
           <td class="num">${totalTime.toFixed(2)}</td>
           <td><span class="status status-ok">Grid</span></td>
