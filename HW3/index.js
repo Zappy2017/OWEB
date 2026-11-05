@@ -370,9 +370,15 @@ function render() {
   tbody.innerHTML = "";
 
   drivers.forEach((driver, index) => {
+    let lapCount = document.getElementById("lapCurrent");
     let totalTime = 0;
     driver.lapTimes.forEach((lap) => {
       totalTime += lap;
+
+      if (lapCount == mockData.race.totalLaps) {
+        totalTime +=
+          driver.pitStops.durationSeconds + driver.incidents.timePenaltySeconds;
+      }
     });
 
     tbody.insertAdjacentHTML(
