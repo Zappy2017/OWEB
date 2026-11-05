@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Formula 1 Scoreboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <div>
+          <h1>Formula 1</h1>
+          <p class="subtitle">10 drivers · 10 laps · 2 tyre compounds</p>
+        </div>
+        <div class="controls">
+          <button id="startBtn" class="btn btn-primary">Start Race</button>
+          <button id="resetBtn" class="btn btn-secondary" disabled>
+            Reset
+          </button>
+        </div>
+      </header>
+
+      <!-- Lap progression -->
+      <section class="card progress-card" aria-label="Lap progress">
+        <div class="progress-head">
+          <span class="lap-label"
+            >Lap <strong id="lapCurrent">0</strong> of
+            <span id="lapTotal">10</span></span
+          >
+          <span class="race-state" id="raceState">Ready</span>
+        </div>
+        <div
+          class="progress-track"
+          role="progressbar"
+          aria-valuemin="0"
+          aria-valuemax="10"
+          aria-valuenow="0"
+          id="progressTrack"
+        >
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-ticks" aria-hidden="true">
+          <span>Start</span><span>2</span><span>4</span><span>6</span
+          ><span>8</span><span>Finish</span>
+        </div>
+      </section>
+
+      <!-- Safety car banner (JS toggles .visible) -->
+      <div class="banner" id="safetyBanner" role="status" aria-live="polite">
+        <span class="banner-dot"></span>
+        Safety car deployed
+      </div>
+
+      <div class="layout">
+        <!-- Standings table -->
+        <section class="card table-card" aria-label="Race standings">
+          <div class="table-wrap">
+            <table class="standings">
+              <thead>
+                <tr>
+                  <th class="col-pos">Pos</th>
+                  <th>Driver</th>
+                  <th>Team</th>
+                  <th class="num">Speed</th>
+                  <th class="num">Skill</th>
+                  <th>Tyre</th>
+                  <th class="num">Pits</th>
+                  <th class="num">Last lap</th>
+                  <th class="num">Total</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <!-- JS re-renders these rows. Static start grid shown below.
+                 Row hooks: data-driver, data-pos. Tyre badge: .tyre-soft / .tyre-hard.
+                 Status badge: .status-ok / .status-pit / .status-spin / .status-sc / .status-finished -->
+              <tbody id="standingsBody">
+                <tr data-driver="1">
+                  <td class="col-pos">1</td>
+                  <td class="driver">Max Verstappen</td>
+                  <td>Red Bull</td>
+                  <td class="num">95</td>
+                  <td class="num">94</td>
+                  <td><span class="tyre tyre-soft">Soft</span></td>
+                  <td class="num">0</td>
+                  <td class="num">—</td>
+                  <td class="num">—</td>
+                  <td><span class="status status-ok">Grid</span></td>
+                </tr>
+                <tr data-driver="2">
+                  <td class="col-pos">2</td>
+                  <td class="driver">Lando Norris</td>
+                  <td>McLaren</td>
+                  <td class="num">93</td>
+                  <td class="num">91</td>
+                  <td><span class="tyre tyre-soft">Soft</span></td>
+                  <td class="num">0</td>
+                  <td class="num">—</td>
+                  <td class="num">—</td>
+                  <td><span class="status status-ok">Grid</span></td>
+                </tr>
+                <tr data-driver="3">
+                  <td class="col-pos">3</td>
+                  <td class="driver">Charles Leclerc</td>
+                  <td>Ferrari</td>
+                  <td class="num">92</td>
+                  <td class="num">89</td>
+                  <td><span class="tyre tyre-hard">Hard</span></td>
+                  <td class="num">0</td>
+                  <td class="num">—</td>
+                  <td class="num">—</td>
+                  <td><span class="status status-ok">Grid</span></td>
+                </tr>
+                <tr data-driver="4">
+                  <td class="col-pos">4</td>
+                  <td class="driver">Lewis Hamilton</td>
+                  <td>Ferrari</td>
+                  <td class="num">91</td>
+                  <td class="num">92</td>
+                  <td><span class="tyre tyre-hard">Hard</span></td>
+                  <td class="num">0</td>
+                  <td class="num">—</td>
+                  <td class="num">—</td>
+                  <td><span class="status status-ok">Grid</span></td>
+                </tr>
+                <tr data-driver="5">
+                  <td class="col-pos">5</td>
+                  <td class="driver">Oscar Piastri</td>
+                  <td>McLaren</td>
+                  <td class="num">90</td>
+                  <td class="num">88</td>
+                  <td><span class="tyre tyre-soft">Soft</span></td>
+                  <td class="num">0</td>
+                  <td class="num">—</td>
+                  <td class="num">—</td>
+                  <td><span class="status status-ok">Grid</span></td>
+                </tr>
+                <tr data-driver="6">
+                  <td class="col-pos">6</td>
+                  <td class="driver">George Russell</td>
+                  <td>Mercedes</td>
+                  <td class="num">89</td>
+                  <td class="num">87</td>
+                  <td><span class="tyre tyre-hard">Hard</span></td>
+                  <td class="num">0</td>
+                  <td class="num">—</td>
+                  <td class="num">—</td>
+                  <td><span class="status status-ok">Grid</span></td>
+                </tr>
+                <tr data-driver="7">
+                  <td class="col-pos">7</td>
+                  <td class="driver">Fernando Alonso</td>
+                  <td>Aston Martin</td>
+                  <td class="num">86</td>
+                  <td class="num">93</td>
+                  <td><span class="tyre tyre-soft">Soft</span></td>
+                  <td class="num">0</td>
+                  <td class="num">—</td>
+                  <td class="num">—</td>
+                  <td><span class="status status-ok">Grid</span></td>
+                </tr>
+                <tr data-driver="8">
+                  <td class="col-pos">8</td>
+                  <td class="driver">Carlos Sainz</td>
+                  <td>Williams</td>
+                  <td class="num">85</td>
+                  <td class="num">86</td>
+                  <td><span class="tyre tyre-hard">Hard</span></td>
+                  <td class="num">0</td>
+                  <td class="num">—</td>
+                  <td class="num">—</td>
+                  <td><span class="status status-ok">Grid</span></td>
+                </tr>
+                <tr data-driver="9">
+                  <td class="col-pos">9</td>
+                  <td class="driver">Pierre Gasly</td>
+                  <td>Alpine</td>
+                  <td class="num">82</td>
+                  <td class="num">84</td>
+                  <td><span class="tyre tyre-soft">Soft</span></td>
+                  <td class="num">0</td>
+                  <td class="num">—</td>
+                  <td class="num">—</td>
+                  <td><span class="status status-ok">Grid</span></td>
+                </tr>
+                <tr data-driver="10">
+                  <td class="col-pos">10</td>
+                  <td class="driver">Yuki Tsunoda</td>
+                  <td>RB</td>
+                  <td class="num">81</td>
+                  <td class="num">82</td>
+                  <td><span class="tyre tyre-hard">Hard</span></td>
+                  <td class="num">0</td>
+                  <td class="num">—</td>
+                  <td class="num">—</td>
+                  <td><span class="status status-ok">Grid</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Side panel -->
+        <aside class="side">
+          <section class="card">
+            <h2>Lap events</h2>
+            <ul class="event-log" id="eventLog">
+              <li class="empty">Events appear here once the race starts.</li>
+            </ul>
+          </section>
+
+          <section class="card">
+            <h2>Tyres</h2>
+            <ul class="legend">
+              <li>
+                <span class="tyre tyre-soft">Soft</span
+                ><span>Faster, wears quickly</span>
+              </li>
+              <li>
+                <span class="tyre tyre-hard">Hard</span
+                ><span>Slower, lasts longer</span>
+              </li>
+            </ul>
+            <p class="note">
+              Every driver must pit at least once and change compound.
+            </p>
+          </section>
+        </aside>
+      </div>
+    </main>
+
+    <!-- Winner popup (JS adds .open) -->
+    <div
+      class="modal"
+      id="winnerModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="winnerTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-backdrop" data-close></div>
+      <div class="modal-panel">
+        <div class="trophy" aria-hidden="true">🏆</div>
+        <p class="modal-kicker">Race winner</p>
+        <h2 id="winnerTitle">Driver name</h2>
+        <p class="modal-team" id="winnerTeam">Team</p>
+        <dl class="modal-stats">
+          <div>
+            <dt>Total time</dt>
+            <dd id="winnerTime">—</dd>
+          </div>
+          <div>
+            <dt>Pit stops</dt>
+            <dd id="winnerPits">—</dd>
+          </div>
+        </dl>
+        <ol class="podium" id="podiumList"></ol>
+        <div class="modal-actions">
+          <button class="btn btn-primary" id="raceAgainBtn">Race again</button>
+          <button class="btn btn-secondary" data-close>Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
