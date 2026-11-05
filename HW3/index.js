@@ -10,23 +10,8 @@ let mockData = {
         baseSpeed: 95,
         baseSkill: 98,
         currentTireType: "soft",
-        pitStops: [
-          {
-            // lap: 5,
-            // tireChange: {
-            //   from: "soft",
-            //   to: "medium",
-            // },
-            // durationSeconds: 3.2,
-          },
-        ],
-        incidents: [
-          {
-            // lap: 7,
-            // type: "spin",
-            // timePenaltySeconds: 4.5,
-          },
-        ],
+        pitStops: [],
+        incidents: [],
       },
       {
         id: 2,
@@ -45,8 +30,8 @@ let mockData = {
         baseSpeed: 96,
         baseSkill: 94,
         currentTireType: "soft",
-        pitStops: [{}],
-        incidents: [{}],
+        pitStops: [],
+        incidents: [],
       },
       {
         id: 4,
@@ -55,8 +40,68 @@ let mockData = {
         baseSpeed: 94,
         baseSkill: 95,
         currentTireType: "medium",
-        pitStops: [{}],
-        incidents: [{}],
+        pitStops: [],
+        incidents: [],
+      },
+      {
+        id: 5,
+        name: "Oscar Piastri",
+        team: "McLaren",
+        baseSpeed: 94,
+        baseSkill: 94,
+        currentTireType: "hard",
+        pitStops: [],
+        incidents: [],
+      },
+      {
+        id: 6,
+        name: "George Russell",
+        team: "Mercedes",
+        baseSpeed: 93,
+        baseSkill: 96,
+        currentTireType: "soft",
+        pitStops: [],
+        incidents: [],
+      },
+      {
+        id: 7,
+        name: "Carlos Sainz",
+        team: "Williams",
+        baseSpeed: 91,
+        baseSkill: 93,
+        currentTireType: "medium",
+        pitStops: [],
+        incidents: [],
+      },
+      {
+        id: 8,
+        name: "Fernando Alonso",
+        team: "Aston Martin",
+        baseSpeed: 90,
+        baseSkill: 98,
+        currentTireType: "hard",
+        pitStops: [],
+        incidents: [],
+      },
+      {
+        id: 9,
+        name: "Lance Stroll",
+        team: "Aston Martin",
+        baseSpeed: 88,
+        baseSkill: 85,
+        currentTireType: "medium",
+        pitStops: [],
+        incidents: [],
+      },
+      {
+        id: 10,
+        name: "Pierre Gasly",
+        team: "Alpine",
+        baseSpeed: 89,
+        baseSkill: 91,
+        currentTireType: "soft",
+        pitStops: [],
+        incidents: [],
       },
     ],
   },
@@ -103,7 +148,7 @@ function initDrivers() {
     }
 
     // Initialise Tyre Data
-    let startingTyreProbability = Math.floor(Math.random() + 1);
+    let startingTyreProbability = Math.floor(Math.random() * 2);
     if (startingTyreProbability) {
       driver.currentTireType = "soft";
     } else {
