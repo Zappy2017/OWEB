@@ -180,7 +180,7 @@ popupResetBtn.addEventListener("click", () => {
 });
 
 function race() {
-  let intervalLapTime = 300;
+  let intervalLapTime = 5000;
 
   initDrivers();
 
