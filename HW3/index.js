@@ -292,7 +292,7 @@ function updateDriversData() {
     driver.lapTimes.push(lapTime);
 
     // Update Tire Changes
-    let currentLap = driver.lapTimes.length;
+    let currentLap = driver.lapTimes.length - 1;
 
     if (currentLap === driver.pitStops.lap) {
       let type = driver.currentTireType;
