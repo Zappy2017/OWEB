@@ -8,6 +8,10 @@
   padding: 0;
 }
 
+body {
+  background-color: whitesmoke;
+}
+
 /* ==============================
    TYPOGRAPHY
 ============================== */
@@ -135,7 +139,6 @@ NAVBAR
 
 .link-container {
   width: 70%;
-
   display: flex;
   gap: 50px;
 }
@@ -145,6 +148,12 @@ NAVBAR
 CARDS
 ------------------------------ 
 */
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
 .card-image {
   width: 100%;
