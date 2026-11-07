@@ -7,9 +7,10 @@
   margin: 0;
   padding: 0;
 }
-
+html,
 body {
   background-color: whitesmoke;
+  min-height: 100%;
 }
 
 /* ==============================
@@ -148,6 +149,9 @@ NAVBAR
   top: 5px;
   z-index: 1000;
   width: 100%;
+
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
 }
 
 /* 
@@ -160,6 +164,8 @@ CARDS
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  min-height: 100dvh;
 }
 
 .card-image {
