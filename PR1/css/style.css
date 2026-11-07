@@ -143,6 +143,13 @@ NAVBAR
   gap: 50px;
 }
 
+[data-component="navbar"] {
+  position: sticky;
+  top: 5px;
+  z-index: 1000;
+  width: 100%;
+}
+
 /* 
 ------------------------------
 CARDS
