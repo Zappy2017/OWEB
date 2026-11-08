@@ -1,16 +1,24 @@
-import { getPlaces } from "./api.js";
+import {
+  getPlaces,
+  getUserPlaces,
+  setUserPlace,
+  removeUserPlace,
+} from "./api.js";
 
-async function renderPlaces() {
+window.setUserPlace = setUserPlace;
+window.removeUserPlace = removeUserPlace;
+
+function renderPlaces() {
   const container = document.getElementById("destinations-container");
 
   try {
-    const response = await getPlaces();
-    const places = response.data;
+    const response = getUserPlaces();
+    const places = response;
 
     container.innerHTML = "";
 
     places.forEach((place) => {
-      const rating = (place.rating / 100).toFixed(1);
+      const rating = place.rating.toFixed(1);
 
       const card = `
         <div class="col-md-12 mb-6 p-0">
@@ -23,6 +31,10 @@ async function renderPlaces() {
               src="${place.image}"
               alt="${place.name}"
             />
+
+            <div class="actions-container">
+                <button onClick="removePlace(${place.id})" class="btn btn-danger rounded-pill"><i class="fa-solid fa-trash"></i></button>
+            </div>
 
             <div class="info-container">
               <div class="d-flex justify-content-between align-items-center">
@@ -58,6 +70,50 @@ async function renderPlaces() {
   }
 }
 
+// API Calls
+function removePlace(id) {
+  removeUserPlace(id);
+  renderPlaces();
+}
+window.removePlace = removePlace;
+
+function setPlace(id) {
+  setUserPlace(id);
+  renderPlaces();
+}
+
+// Popup
+const placeSelect = document.getElementById("placeSelect");
+const addPlaceForm = document.getElementById("addPlaceForm");
+
+function populatePlaces() {
+  const places = getPlaces();
+
+  places.data.forEach((place) => {
+    const option = document.createElement("option");
+
+    option.value = place.id;
+    option.textContent = `${place.name}, ${place.country}`;
+
+    placeSelect.appendChild(option);
+  });
+}
+
+addPlaceForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const id = Number(placeSelect.value);
+  const cost = Number(document.getElementById("placeCost").value);
+
+  if (!id || cost < 0 || !Number.isFinite(cost)) return;
+
+  setPlace(id, cost);
+
+  addPlaceForm.reset();
+  $("#addPlaceModal").modal("hide");
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   renderPlaces();
+  populatePlaces();
 });

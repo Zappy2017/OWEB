@@ -175,6 +175,15 @@ CARDS
   display: block;
 }
 
+.actions-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  padding: 20px;
+  color: white;
+}
+
 .info-container {
   position: absolute;
   bottom: 0;

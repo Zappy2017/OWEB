@@ -172,3 +172,45 @@ const mockPlaces = {
 export function getPlaces() {
   return mockPlaces;
 }
+
+export function getUserPlaces() {
+  let userPlaces = JSON.parse(localStorage.getItem("places"));
+  return userPlaces;
+}
+
+export function setUserPlace(placeID, cost) {
+  let userPlaces = getUserPlaces() ?? [];
+
+  const place = mockPlaces.data.find((place) => place.id === Number(placeID));
+
+  if (!place) return;
+
+  if (userPlaces.some((p) => p.id === place.id)) return;
+
+  userPlaces.push(place);
+
+  localStorage.setItem("places", JSON.stringify(userPlaces));
+}
+
+export function removeUserPlace(placeID) {
+  let userPlaces = getUserPlaces() ?? [];
+
+  userPlaces = userPlaces.filter((place) => {
+    return place.id !== placeID;
+  });
+
+  localStorage.setItem("places", JSON.stringify(userPlaces));
+}
+
+export function login() {
+  localStorage.setItem(
+    "user",
+    JSON.stringify({
+      id: 1,
+      name: "Stefan",
+      email: "stefan@example.com",
+      role: "admin",
+      isLoggedIn: true,
+    }),
+  );
+}
