@@ -1,4 +1,5 @@
 // Mock API
+
 const mockPlaces = {
   data: [
     {
@@ -8,6 +9,18 @@ const mockPlaces = {
       id: 1,
       image:
         "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&h=600&fit=crop",
+      images: [
+        "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1503919005314-30d93d07d823?w=800&h=600&fit=crop",
+      ],
+      must_visit: [
+        "Eiffel Tower",
+        "Louvre Museum",
+        "Notre-Dame Cathedral",
+        "Arc de Triomphe",
+        "Montmartre",
+      ],
       name: "Paris",
       popular: true,
       rating: 4.9,
@@ -19,6 +32,18 @@ const mockPlaces = {
       id: 2,
       image:
         "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&h=600&fit=crop",
+      images: [
+        "https://images.unsplash.com/photo-1513407030348-c983a97b98d8?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?w=800&h=600&fit=crop",
+      ],
+      must_visit: [
+        "Shibuya Crossing",
+        "Tokyo Tower",
+        "Senso-ji Temple",
+        "Meiji Shrine",
+        "Shinjuku Gyoen",
+      ],
       name: "Tokyo",
       popular: true,
       rating: 4.8,
@@ -30,6 +55,18 @@ const mockPlaces = {
       id: 3,
       image:
         "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800&h=600&fit=crop",
+      images: [
+        "https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1531572753322-ad063cecc140?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1525874684015-58379d421a52?w=800&h=600&fit=crop",
+      ],
+      must_visit: [
+        "Colosseum",
+        "Trevi Fountain",
+        "Pantheon",
+        "Roman Forum",
+        "Vatican City",
+      ],
       name: "Rome",
       popular: true,
       rating: 4.9,
@@ -41,6 +78,18 @@ const mockPlaces = {
       id: 4,
       image:
         "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=800&h=600&fit=crop",
+      images: [
+        "https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1533105079780-92b9be482077?w=800&h=600&fit=crop",
+      ],
+      must_visit: [
+        "Oia Village",
+        "Fira",
+        "Red Beach",
+        "Akrotiri Archaeological Site",
+        "Skaros Rock",
+      ],
       name: "Santorini",
       popular: true,
       rating: 4.8,
@@ -52,6 +101,18 @@ const mockPlaces = {
       id: 5,
       image:
         "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&h=600&fit=crop",
+      images: [
+        "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=800&h=600&fit=crop",
+      ],
+      must_visit: [
+        "Uluwatu Temple",
+        "Tegallalang Rice Terraces",
+        "Sacred Monkey Forest",
+        "Mount Batur",
+        "Tanah Lot Temple",
+      ],
       name: "Bali",
       popular: true,
       rating: 4.7,
@@ -63,6 +124,18 @@ const mockPlaces = {
       id: 6,
       image:
         "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=800&h=600&fit=crop",
+      images: [
+        "https://images.unsplash.com/photo-1534430480872-3498386e7856?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1522083165195-3424ed129620?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?w=800&h=600&fit=crop",
+      ],
+      must_visit: [
+        "Statue of Liberty",
+        "Central Park",
+        "Times Square",
+        "Empire State Building",
+        "Brooklyn Bridge",
+      ],
       name: "New York",
       popular: true,
       rating: 4.8,
@@ -74,6 +147,18 @@ const mockPlaces = {
       id: 7,
       image:
         "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&h=600&fit=crop",
+      images: [
+        "https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&h=600&fit=crop",
+      ],
+      must_visit: [
+        "Fushimi Inari Shrine",
+        "Arashiyama Bamboo Grove",
+        "Kinkaku-ji Temple",
+        "Kiyomizu-dera Temple",
+        "Gion District",
+      ],
       name: "Kyoto",
       popular: false,
       rating: 4.9,
@@ -85,6 +170,18 @@ const mockPlaces = {
       id: 8,
       image:
         "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&h=600&fit=crop",
+      images: [
+        "https://images.unsplash.com/photo-1518684079-3c830dcef090?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1512632578888-169bbbc64f33?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&h=600&fit=crop",
+      ],
+      must_visit: [
+        "Burj Khalifa",
+        "Burj Al Arab",
+        "Palm Jumeirah",
+        "Dubai Mall",
+        "Dubai Marina",
+      ],
       name: "Dubai",
       popular: true,
       rating: 4.6,
@@ -96,6 +193,18 @@ const mockPlaces = {
       id: 9,
       image:
         "https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?w=800&h=600&fit=crop",
+      images: [
+        "https://images.unsplash.com/photo-1534351590666-13e3e96b5017?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?w=800&h=600&fit=crop",
+      ],
+      must_visit: [
+        "Rijksmuseum",
+        "Anne Frank House",
+        "Van Gogh Museum",
+        "Jordaan District",
+        "Vondelpark",
+      ],
       name: "Amsterdam",
       popular: false,
       rating: 4.7,
@@ -107,6 +216,18 @@ const mockPlaces = {
       id: 10,
       image:
         "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800&h=600&fit=crop",
+      images: [
+        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&h=600&fit=crop",
+      ],
+      must_visit: [
+        "Jungfraujoch",
+        "Lake Thun",
+        "Lake Brienz",
+        "Harder Kulm",
+        "Lauterbrunnen Valley",
+      ],
       name: "Interlaken",
       popular: false,
       rating: 4.9,
@@ -118,6 +239,18 @@ const mockPlaces = {
       id: 11,
       image:
         "https://images.unsplash.com/photo-1519677100203-a0e668c92439?w=800&h=600&fit=crop",
+      images: [
+        "https://images.unsplash.com/photo-1541849546-216549ae216d?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1519677100203-a0e668c92439?w=800&h=600&fit=crop",
+      ],
+      must_visit: [
+        "Charles Bridge",
+        "Prague Castle",
+        "Old Town Square",
+        "Astronomical Clock",
+        "St. Vitus Cathedral",
+      ],
       name: "Prague",
       popular: false,
       rating: 4.8,
@@ -129,6 +262,18 @@ const mockPlaces = {
       id: 12,
       image:
         "https://images.unsplash.com/photo-1583422409516-2895a77efded?w=800&h=600&fit=crop",
+      images: [
+        "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1509840841025-9088ba78a826?w=800&h=600&fit=crop",
+      ],
+      must_visit: [
+        "Sagrada Familia",
+        "Park Güell",
+        "Casa Batlló",
+        "Gothic Quarter",
+        "La Rambla",
+      ],
       name: "Barcelona",
       popular: true,
       rating: 4.7,
@@ -140,6 +285,18 @@ const mockPlaces = {
       id: 13,
       image:
         "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&h=600&fit=crop",
+      images: [
+        "https://images.unsplash.com/photo-1486299267070-83823f5448dd?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1529655683826-aba9b3e77383?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&h=600&fit=crop",
+      ],
+      must_visit: [
+        "Big Ben",
+        "Buckingham Palace",
+        "Tower Bridge",
+        "London Eye",
+        "British Museum",
+      ],
       name: "London",
       popular: false,
       rating: 4.6,
@@ -151,6 +308,18 @@ const mockPlaces = {
       id: 14,
       image:
         "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=800&h=600&fit=crop",
+      images: [
+        "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop",
+      ],
+      must_visit: [
+        "Malé",
+        "Banana Reef",
+        "Maafushi Island",
+        "Vaadhoo Island",
+        "HP Reef",
+      ],
       name: "Maldives",
       popular: true,
       rating: 4.9,
@@ -162,6 +331,18 @@ const mockPlaces = {
       id: 15,
       image:
         "https://images.unsplash.com/photo-1570939274717-7eda259b50ed?w=800&h=600&fit=crop",
+      images: [
+        "https://images.unsplash.com/photo-1527838832700-5059252407fa?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1504198322253-cfa87a0ff25f?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1570939274717-7eda259b50ed?w=800&h=600&fit=crop",
+      ],
+      must_visit: [
+        "Göreme Open-Air Museum",
+        "Uçhisar Castle",
+        "Love Valley",
+        "Derinkuyu Underground City",
+        "Pasabag Valley",
+      ],
       name: "Cappadocia",
       popular: false,
       rating: 4.8,
