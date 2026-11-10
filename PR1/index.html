@@ -33,15 +33,46 @@
       style="gap: 10px; justify-content: space-between; margin-top: 35px"
     >
       <h2>Your Destinations</h2>
-      <button
-        type="button"
-        data-toggle="modal"
-        data-target="#addPlaceModal"
-        class="btn btn-primary rounded-pill"
-      >
-        Add
-        <i class="fa-solid fa-plus"></i>
-      </button>
+
+      <div class="card-actions-container d-flex">
+        <div class="dropdown badge">
+          <button
+            class="btn btn-outline-secondary dropdown-toggle"
+            type="button"
+            id="sortDropdown"
+            data-toggle="dropdown"
+          >
+            <i class="fa-solid fa-arrow-down-wide-short"></i>
+            Sort by
+          </button>
+
+          <div class="dropdown-menu">
+            <button class="dropdown-item" onclick="sortPlaces('budget-asc')">
+              Budget: Lowest first
+            </button>
+
+            <button class="dropdown-item" onclick="sortPlaces('budget-desc')">
+              Budget: Highest first
+            </button>
+
+            <div class="dropdown-divider"></div>
+
+            <button class="dropdown-item" onclick="sortPlaces('category')">
+              Category: A-Z
+            </button>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          data-toggle="modal"
+          data-target="#addPlaceModal"
+          class="btn btn-primary rounded-pill"
+        >
+          Add
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
     </div>
 
     <div

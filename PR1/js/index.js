@@ -10,11 +10,33 @@ import initPopup from "./components/add-place-modal.js";
 window.setUserPlace = setUserPlace;
 window.removeUserPlace = removeUserPlace;
 
+let currentSort = "budget-asc";
+
+function sortPlaces(sortBy) {
+  currentSort = sortBy;
+  renderPlaces();
+}
+window.sortPlaces = sortPlaces;
+
 function renderPlaces() {
   const container = document.getElementById("destinations-container");
 
   try {
-    const places = getUserPlaces();
+    const places = [...getUserPlaces()];
+
+    switch (currentSort) {
+      case "budget-asc":
+        places.sort((a, b) => Number(a.cost) - Number(b.cost));
+        break;
+
+      case "budget-desc":
+        places.sort((a, b) => Number(b.cost) - Number(a.cost));
+        break;
+
+      case "category":
+        places.sort((a, b) => a.category.localeCompare(b.category));
+        break;
+    }
 
     container.innerHTML = "";
 
