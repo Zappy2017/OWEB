@@ -14,13 +14,15 @@ function renderPlaces() {
   const container = document.getElementById("destinations-container");
 
   try {
-    const response = getUserPlaces();
-    const places = response;
+    const places = getUserPlaces();
 
     container.innerHTML = "";
 
     places.forEach((place) => {
       const rating = place.rating.toFixed(1);
+
+      const extraExpenses = Math.floor(Math.random() * 101) + 50;
+      const estimatedCost = Number(place.cost) + extraExpenses;
 
       const card = `
         <div class="col-md-12 mb-6 p-0">
@@ -37,7 +39,9 @@ function renderPlaces() {
             </a>
 
             <div class="actions-container">
-                <button onClick="removePlace(${place.id})" class="btn btn-danger rounded-pill"><i class="fa-solid fa-trash"></i></button>
+              <button onclick="removePlace(${place.id})" class="btn btn-danger rounded-pill">
+                <i class="fa-solid fa-trash"></i>
+              </button>
             </div>
 
             <div class="info-container">
@@ -60,6 +64,14 @@ function renderPlaces() {
               </div>
 
               ${place.popular ? '<span class="popular-badge">Popular</span>' : ""}
+
+              <div class="estimated-cost mt-3">
+                <i class="fa-solid fa-wallet"></i>
+                <span>
+                  Estimated: €${estimatedCost}
+                  <small>(€${place.cost} + €${extraExpenses} other expenses)</small>
+                </span>
+              </div>
 
             </div>
           </div>
