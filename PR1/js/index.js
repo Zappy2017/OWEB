@@ -28,11 +28,13 @@ function renderPlaces() {
             class="container border rounded-5 p-0 m-0 w-100 overflow-hidden"
             style="height: 300px; position: relative"
           >
-            <img
-              class="card-image"
-              src="${place.image}"
-              alt="${place.name}"
-            />
+            <a href="place.html?id=${place.id}">
+              <img
+                class="card-image"
+                src="${place.image}"
+                alt="${place.name}"
+              />
+            </a>
 
             <div class="actions-container">
                 <button onClick="removePlace(${place.id})" class="btn btn-danger rounded-pill"><i class="fa-solid fa-trash"></i></button>
@@ -79,8 +81,8 @@ function removePlace(id) {
 }
 window.removePlace = removePlace;
 
-function setPlace(id) {
-  setUserPlace(id);
+function setPlace(id, cost) {
+  setUserPlace(id, cost);
   renderPlaces();
 }
 

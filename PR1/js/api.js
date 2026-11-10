@@ -187,7 +187,12 @@ export function setUserPlace(placeID, cost) {
 
   if (userPlaces.some((p) => p.id === place.id)) return;
 
-  userPlaces.push(place);
+  const userPlace = {
+    ...place,
+    cost: Number(cost),
+  };
+
+  userPlaces.push(userPlace);
 
   localStorage.setItem("places", JSON.stringify(userPlaces));
 }
