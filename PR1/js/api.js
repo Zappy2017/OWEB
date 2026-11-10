@@ -214,3 +214,18 @@ export function login() {
     }),
   );
 }
+
+// Likes / dislikes / comments are stored per place in localStorage (mock only)
+export function loadFeedback(id) {
+  const fallback = { likes: 0, dislikes: 0, vote: null, comments: [] };
+  try {
+    const saved = JSON.parse(localStorage.getItem(`place-feedback-${id}`));
+    return saved ? { ...fallback, ...saved } : fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+export function saveFeedback(id, feedback) {
+  localStorage.setItem(`place-feedback-${id}`, JSON.stringify(feedback));
+}
