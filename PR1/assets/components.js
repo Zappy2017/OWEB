@@ -3,8 +3,8 @@ const components = {
         <nav class="navbar">
             <div class="link-container">
                 <a href="index.html"><i class="fa-solid fa-plane"></i> &nbsp; Destinations</a>
-                <a href="page.html"><i class="fa-solid fa-check"></i> &nbsp;  Visited</a>
-                <a href="page.html"><i class="fa-solid fa-location-dot"></i> &nbsp; Guide</a>
+                <a href="guide.html"><i class="fa-solid fa-location-dot"></i> &nbsp; Guide</a>
+                <a href="survey.html"><i class="fa-solid fa-check"></i> &nbsp;  Survey</a>
             </div>
             <a href="page.html"><i class="fa-regular fa-user"></i></a>
         </nav>
