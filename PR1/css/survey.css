@@ -1,0 +1,41 @@
+.star-rating {
+  display: flex;
+  gap: 4px;
+}
+
+.star-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 1.8rem;
+  color: #ddd;
+  cursor: pointer;
+  transition:
+    color 0.15s,
+    transform 0.15s;
+}
+
+.star-btn:hover {
+  transform: scale(1.15);
+}
+
+.star-btn.active {
+  color: #f5a623;
+}
+
+.review-item {
+  border: 1px solid #eee;
+  border-radius: 1rem;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+}
+
+.review-rating {
+  color: #f5a623;
+  font-size: 0.9rem;
+}
+
+.review-meta {
+  font-size: 0.8rem;
+  color: #888;
+}

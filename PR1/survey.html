@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leave a Review | Travel Planner</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/survey.css" />
+  </head>
+  <body>
+    <div
+      data-component="navbar"
+      class="container p-2 my-2 border rounded-pill"
+    ></div>
+
+    <div class="container p-0" style="margin-top: 35px">
+      <h2 class="mb-1">Share your experience</h2>
+      <p class="text-muted mb-4">
+        Tell us about a destination you visited and help other travelers.
+      </p>
+
+      <div class="row">
+        <!-- Review form -->
+        <div class="col-lg-7 mb-4">
+          <div class="border rounded-4 p-4">
+            <form id="survey-form" novalidate>
+              <div class="form-group">
+                <label for="survey-place">Destination</label>
+                <select
+                  id="survey-place"
+                  class="form-control rounded-pill"
+                  required
+                >
+                  <option value="" disabled selected>
+                    Choose a destination
+                  </option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="survey-name">Your name</label>
+                <input
+                  type="text"
+                  id="survey-name"
+                  class="form-control rounded-pill"
+                  placeholder="Enter your name"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label>Overall rating</label>
+                <div id="star-rating" class="star-rating">
+                  <button
+                    type="button"
+                    class="star-btn"
+                    data-value="1"
+                    aria-label="1 star"
+                  >
+                    <i class="fa-solid fa-star"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="star-btn"
+                    data-value="2"
+                    aria-label="2 stars"
+                  >
+                    <i class="fa-solid fa-star"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="star-btn"
+                    data-value="3"
+                    aria-label="3 stars"
+                  >
+                    <i class="fa-solid fa-star"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="star-btn"
+                    data-value="4"
+                    aria-label="4 stars"
+                  >
+                    <i class="fa-solid fa-star"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="star-btn"
+                    data-value="5"
+                    aria-label="5 stars"
+                  >
+                    <i class="fa-solid fa-star"></i>
+                  </button>
+                </div>
+                <small id="rating-error" class="text-danger d-none">
+                  Please select a rating.
+                </small>
+              </div>
+
+              <div class="form-group">
+                <label for="survey-visit">When did you visit?</label>
+                <input
+                  type="month"
+                  id="survey-visit"
+                  class="form-control rounded-pill"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="d-block">Would you recommend it?</label>
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input
+                    type="radio"
+                    id="rec-yes"
+                    name="recommend"
+                    value="yes"
+                    class="custom-control-input"
+                    required
+                  />
+                  <label class="custom-control-label" for="rec-yes">Yes</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input
+                    type="radio"
+                    id="rec-no"
+                    name="recommend"
+                    value="no"
+                    class="custom-control-input"
+                  />
+                  <label class="custom-control-label" for="rec-no">No</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="survey-comment">Your review</label>
+                <textarea
+                  id="survey-comment"
+                  class="form-control"
+                  rows="4"
+                  placeholder="What did you like? What could be better?"
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary rounded-pill">
+                Submit review
+              </button>
+            </form>
+
+            <div id="survey-success" class="alert alert-success mt-3 d-none">
+              Thank you! Your review has been submitted.
+            </div>
+          </div>
+        </div>
+
+        <!-- Submitted reviews -->
+        <div class="col-lg-5">
+          <h5>Your submitted reviews</h5>
+          <div id="reviews-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      data-component="footer"
+      class="container p-0"
+      style="max-width: none"
+    ></div>
+
+    <script src="assets/components.js"></script>
+    <script src="js/survey/survey.js" type="module"></script>
+  </body>
+</html>

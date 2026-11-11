@@ -430,3 +430,18 @@ export function loadFeedback(id) {
 export function saveFeedback(id, feedback) {
   localStorage.setItem(`place-feedback-${id}`, JSON.stringify(feedback));
 }
+
+// Reviews are stored in localStorage (mock only) - swap for an API call later
+export function loadReviews(STORAGE_KEY) {
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+  } catch {
+    return [];
+  }
+}
+
+export function saveReview(review, STORAGE_KEY) {
+  const reviews = loadReviews();
+  reviews.unshift(review);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(reviews));
+}
