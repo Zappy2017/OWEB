@@ -1,5 +1,3 @@
-// Mock API
-
 const mockPlaces = {
   data: [
     {
@@ -401,19 +399,6 @@ export function removeUserPlace(placeID) {
   });
 
   localStorage.setItem("places", JSON.stringify(userPlaces));
-}
-
-export function login() {
-  localStorage.setItem(
-    "user",
-    JSON.stringify({
-      id: 1,
-      name: "Stefan",
-      email: "stefan@example.com",
-      role: "admin",
-      isLoggedIn: true,
-    }),
-  );
 }
 
 // Likes / dislikes / comments are stored per place in localStorage (mock only)

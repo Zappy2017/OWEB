@@ -6,7 +6,7 @@ const components = {
                 <a href="guide.html"><i class="fa-solid fa-location-dot"></i> &nbsp; Guide</a>
                 <a href="survey.html"><i class="fa-solid fa-check"></i> &nbsp;  Survey</a>
             </div>
-            <a href="page.html"><i class="fa-regular fa-user"></i></a>
+            <a href="login.html"><i class="fa-regular fa-user"></i></a>
         </nav>
     `,
 

@@ -1,0 +1,32 @@
+.login-card {
+  max-width: 420px;
+}
+
+.login-icon {
+  font-size: 2.5rem;
+  color: #007bff;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper .form-control {
+  padding-right: 48px;
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  padding: 0;
+}
+
+.password-toggle:hover {
+  color: #333;
+}
