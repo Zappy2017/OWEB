@@ -1,0 +1,93 @@
+/* Article list */
+.guide-card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+}
+
+.guide-card:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.guide-card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.guide-card-inner {
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.guide-card:hover .guide-card-inner {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.guide-excerpt {
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: #666;
+}
+
+/* Single article */
+.article-hero {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 1.5rem;
+}
+
+.article-body {
+  max-width: 800px;
+}
+
+.must-visit-item {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.must-visit-item:last-child {
+  border-bottom: none;
+}
+
+.must-visit-number {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #007bff;
+  color: #fff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.must-visit-image {
+  width: 140px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 576px) {
+  .must-visit-item {
+    flex-wrap: wrap;
+  }
+
+  .must-visit-image {
+    width: 100%;
+    height: 160px;
+  }
+}
